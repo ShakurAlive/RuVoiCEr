@@ -2,6 +2,7 @@
 
 import gc
 import logging
+import re
 
 import requests
 import torch
@@ -13,10 +14,60 @@ logger = logging.getLogger(__name__)
 #  Ollama (local LLM)
 # ═════════════════════════════════════════════════════════════════════════
 
+# Regex patterns for cleaning up model output
+_RE_PARENTHETICAL = re.compile(r"\s*\((?:[A-Z]|Note|Translation|English|literally|Translated|This is)[^)]*\)\s*", re.IGNORECASE)
+_RE_ENGLISH_LINE = re.compile(r"^[A-Za-z\s\'\",.:;!?-]{10,}$")
+_RE_META_PREFIX = re.compile(r"^(Note:|Translation:|Here|However|Remember|I\'m|I am|My |Please|If you|Happy|The |This is|Output:)", re.IGNORECASE)
+
+_SYSTEM_PROMPT = (
+    "Translate the following English text into natural spoken Russian. "
+    "Rules:\n"
+    "1. Output ONLY the Russian translation — one line, no quotes, no notes, no parentheses, no English.\n"
+    "2. Translate profanity directly: fuck→ебать/блять, shit→дерьмо/говно, "
+    "bitch→сука, ass→жопа, damn→чёрт, bastard→ублюдок, motherfucker→сукин сын.\n"
+    "3. Use colloquial spoken Russian, not formal/literary.\n"
+    "4. Never add explanations, commentary, or the original English."
+)
+
+
+def _clean_translation(raw: str, source: str) -> str:
+    """Strip model garbage: English notes, parenthetical commentary, meta-text."""
+    # Split into lines, process each
+    lines = raw.strip().splitlines()
+    cleaned = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        # Remove parenthetical English notes
+        line = _RE_PARENTHETICAL.sub("", line).strip()
+        if not line:
+            continue
+        # Skip lines that are pure English (model echoed source or added notes)
+        if _RE_ENGLISH_LINE.match(line):
+            continue
+        # Skip meta-commentary lines
+        if _RE_META_PREFIX.match(line):
+            continue
+        # Skip if line is identical to source (model echoed input)
+        if line.lower().strip('"\'') == source.lower().strip('"\''):
+            continue
+        cleaned.append(line)
+
+    result = " ".join(cleaned).strip()
+
+    # If cleaning removed everything, return raw first line as fallback
+    if not result and lines:
+        result = lines[0].strip()
+        result = _RE_PARENTHETICAL.sub("", result).strip()
+
+    return result
+
+
 class OllamaTranslator:
     """Translate via a locally-running Ollama instance."""
 
-    def __init__(self, model="qwen2.5:7b", base_url="http://localhost:11434"):
+    def __init__(self, model="gemma3:4b", base_url="http://localhost:11434"):
         self.model = model
         self.base_url = base_url.rstrip("/")
 
@@ -32,24 +83,24 @@ class OllamaTranslator:
     # ── translation ──────────────────────────────────────────────────────
 
     def translate(self, text: str) -> str:
-        prompt = (
-            "Translate the following English text into natural, literary Russian. "
-            "Preserve the tone, emotions, style and nuances of the original. "
-            "Return ONLY the translation, nothing else.\n\n"
-            f"{text}"
-        )
         resp = requests.post(
-            f"{self.base_url}/api/generate",
+            f"{self.base_url}/api/chat",
             json={
                 "model": self.model,
-                "prompt": prompt,
+                "messages": [
+                    {"role": "system", "content": _SYSTEM_PROMPT},
+                    {"role": "user", "content": f"Translate: {text}"},
+                ],
                 "stream": False,
-                "options": {"temperature": 0.3, "num_predict": 1024},
+                "options": {"temperature": 0.3, "num_predict": 512},
             },
             timeout=180,
         )
         resp.raise_for_status()
-        return resp.json()["response"].strip()
+        raw = resp.json()["message"]["content"].strip()
+        result = _clean_translation(raw, text)
+        logger.debug("Translate: %r → raw=%r → clean=%r", text, raw, result)
+        return result
 
     def translate_segments(self, segments, progress_callback=None):
         translated = []

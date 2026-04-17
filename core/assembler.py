@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 class Assembler:
     """Concatenate TTS segments preserving the original pause structure."""
 
-    def assemble(self, segments: list[dict], output_path: str) -> str | None:
+    def assemble(self, segments: list[dict], output_path: str, background_path: str | None = None) -> str | None:
         combined = AudioSegment.empty()
         prev_end = 0.0
 
@@ -37,6 +37,20 @@ class Assembler:
 
         # light loudness normalization
         combined = combined.normalize()
+
+        # Mix with background track if provided
+        if background_path and os.path.exists(background_path):
+            bg = AudioSegment.from_file(background_path)
+            # Match lengths: pad or trim background
+            if len(bg) < len(combined):
+                bg += AudioSegment.silent(duration=len(combined) - len(bg))
+            elif len(bg) > len(combined):
+                bg = bg[:len(combined)]
+            # Lower background volume so speech is clear
+            bg = bg - 3  # reduce by 3 dB
+            combined = combined.overlay(bg)
+            logger.info("Mixed with background track: %s", background_path)
+
         combined.export(output_path, format="wav")
         logger.info("Assembled %.1f s → %s", len(combined) / 1000, output_path)
         return output_path

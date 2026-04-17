@@ -1,23 +1,155 @@
-21:57:50  ruvoicer                  INFO     Pre-loading Whisper model (before Gradio starts)...
-21:57:50  core.transcriber          INFO     Loading Whisper model: large-v3-turbo
-21:57:53  core.transcriber          INFO     Whisper model loaded
-21:57:53  ruvoicer                  INFO     Whisper ready.
-21:57:56  httpx                     INFO     HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
-21:57:56  httpx                     INFO     HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
-21:57:57  httpx                     INFO     HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
-21:58:10  core.transcriber          INFO     Transcribing: output\tmpqc3ywp0i\input.wav
-21:58:10  faster_whisper            INFO     Processing audio with duration 00:02.261
-21:58:10  faster_whisper            INFO     VAD filter removed 00:00.000 of audio
-21:58:10  core.transcriber          INFO     Transcribed 1 segments  |  detected lang: en (100%)
-21:58:21  core.synthesizer          INFO     Loading TTS model: tts_models/multilingual/multi-dataset/xtts_v2
-D:\Projects\RuVoiCer\venv\Lib\site-packages\TTS\tts\layers\xtts\xtts_manager.py:5: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  self.speakers = torch.load(speaker_file_path)
-D:\Projects\RuVoiCer\venv\Lib\site-packages\TTS\utils\io.py:54: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  return torch.load(f, map_location=map_location, **kwargs)
-21:58:49  core.synthesizer          INFO     TTS model loaded
-21:59:03  core.synthesizer          INFO     TTS model unloaded, VRAM freed
-21:59:03  core.assembler            INFO     Assembled 5.0 s \u2192 output\tmpqc3ywp0i\result.wav
-21:59:03  asyncio                   ERROR    Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+02:53:00  ruvoicer                  INFO     Pre-loading Whisper model (before Gradio starts)...
+02:53:00  core.transcriber          INFO     Loading Whisper model: large-v3-turbo
+02:53:02  core.transcriber          INFO     Whisper model loaded
+02:53:02  ruvoicer                  INFO     Whisper ready.
+02:53:05  httpx                     INFO     HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+02:53:05  httpx                     INFO     HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+02:53:05  httpx                     INFO     HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+02:53:22  core.separator            INFO     Loading Demucs htdemucs modelЕ
+  0%|          | 0.00/80.2M [00:00<?, ?B/s]  0%|          | 128k/80.2M [00:00<01:38, 850kB/s]  0%|          | 384k/80.2M [00:00<00:49, 1.69MB/s]  1%|1         | 1.12M/80.2M [00:00<00:20, 3.98MB/s]  3%|3         | 2.75M/80.2M [00:00<00:09, 8.54MB/s]  9%|8         | 7.12M/80.2M [00:00<00:03, 21.0MB/s] 13%|#3        | 10.6M/80.2M [00:00<00:03, 21.2MB/s] 18%|#7        | 14.1M/80.2M [00:00<00:03, 22.4MB/s] 27%|##7       | 21.8M/80.2M [00:00<00:01, 37.0MB/s] 32%|###2      | 25.8M/80.2M [00:01<00:01, 32.3MB/s] 38%|###7      | 30.4M/80.2M [00:01<00:01, 36.2MB/s] 46%|####6     | 37.2M/80.2M [00:01<00:00, 45.4MB/s] 52%|#####2    | 42.0M/80.2M [00:01<00:01, 39.1MB/s] 59%|#####8    | 47.0M/80.2M [00:01<00:00, 38.9MB/s] 64%|######3   | 51.0M/80.2M [00:01<00:00, 39.4MB/s] 69%|######8   | 55.0M/80.2M [00:01<00:00, 40.0MB/s] 74%|#######3  | 59.0M/80.2M [00:02<00:00, 33.6MB/s] 86%|########6 | 69.2M/80.2M [00:02<00:00, 51.1MB/s] 93%|#########3| 74.8M/80.2M [00:02<00:00, 39.7MB/s]100%|##########| 80.2M/80.2M [00:02<00:00, 34.1MB/s]
+02:53:26  core.separator            INFO     Demucs loaded on cuda
+02:53:35  core.separator            INFO     Separated: vocals \u2192 output\tmp36fpv_om\separated_000\vocals.wav, background \u2192 output\tmp36fpv_om\separated_000\background.wav
+02:53:35  core.separator            INFO     Demucs unloaded
+W0418 02:53:39.873000 38000 venv\Lib\site-packages\torch\utils\flop_counter.py:29] triton not found; flop counting will not work for triton kernels
+D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\core\io.py:47: UserWarning: 
+torchcodec is not installed correctly so built-in audio decoding will fail. Solutions are:
+* use audio preloaded in-memory as a {'waveform': (channel, time) torch.Tensor, 'sample_rate': int} dictionary;
+* fix torchcodec installation. Error message was:
+
+Could not load libtorchcodec. Likely causes:
+          1. FFmpeg is not properly installed in your environment. We support
+             versions 4, 5, 6, 7, and 8, and we attempt to load libtorchcodec
+             for each of those versions. Errors for versions not installed on
+             your system are expected; only the error for your installed FFmpeg
+             version is relevant. On Windows, ensure you've installed the
+             "full-shared" version which ships DLLs.
+          2. The PyTorch version (2.11.0+cu128) is not compatible with
+             this version of TorchCodec. Refer to the version compatibility
+             table:
+             https://github.com/pytorch/torchcodec?tab=readme-ov-file#installing-torchcodec.
+          3. Another runtime dependency; see exceptions below.
+
+        The following exceptions were raised as we tried to load libtorchcodec:
+        
+[start of libtorchcodec loading traceback]
+FFmpeg version 8:
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1503, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\ctypes\__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core8.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1505, in load_library
+    raise OSError(f"Could not load this library: {path}") from e
+OSError: Could not load this library: D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core8.dll
+
+FFmpeg version 7:
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1503, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\ctypes\__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core7.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1505, in load_library
+    raise OSError(f"Could not load this library: {path}") from e
+OSError: Could not load this library: D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core7.dll
+
+FFmpeg version 6:
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1503, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\ctypes\__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core6.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1505, in load_library
+    raise OSError(f"Could not load this library: {path}") from e
+OSError: Could not load this library: D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core6.dll
+
+FFmpeg version 5:
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1503, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\ctypes\__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core5.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1505, in load_library
+    raise OSError(f"Could not load this library: {path}") from e
+OSError: Could not load this library: D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core5.dll
+
+FFmpeg version 4:
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1503, in load_library
+    ctypes.CDLL(path)
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\ctypes\__init__.py", line 376, in __init__
+    self._handle = _dlopen(self._name, mode)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: Could not find module 'D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core4.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\_internally_replaced_utils.py", line 93, in load_torchcodec_shared_libraries
+    torch.ops.load_library(core_library_path)
+  File "D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\_ops.py", line 1505, in load_library
+    raise OSError(f"Could not load this library: {path}") from e
+OSError: Could not load this library: D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core4.dll
+[end of libtorchcodec loading traceback].
+  warnings.warn(
+02:53:40  core.diarizer             INFO     Loading pyannote speaker-diarization-3.1 Е
+02:53:43  core.diarizer             INFO     Diarization pipeline loaded on cuda
+02:53:43  core.diarizer             INFO     Diarizing: output\tmp36fpv_om\separated_000\vocals.wav
+D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\utils\reproducibility.py:74: ReproducibilityWarning: TensorFloat-32 (TF32) has been disabled as it might lead to reproducibility issues and lower accuracy.
+It can be re-enabled by calling
+   >>> import torch
+   >>> torch.backends.cuda.matmul.allow_tf32 = True
+   >>> torch.backends.cudnn.allow_tf32 = True
+See https://github.com/pyannote/pyannote-audio/issues/1370 for more details.
+
+  warnings.warn(
+D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\models\blocks\pooling.py:103: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1858.)
+  std = sequences.std(dim=-1, correction=1)
+02:53:56  core.diarizer             INFO     Diarization: 78 turns, 2 speakers detected
+02:53:57  core.diarizer             INFO     Diarization pipeline unloaded
+02:53:57  core.diarizer             INFO     Extracted 8.3 s reference for SPEAKER_00 \u2192 ref_SPEAKER_00.wav
+02:53:57  core.diarizer             INFO     Extracted 4.4 s reference for SPEAKER_01 \u2192 ref_SPEAKER_01.wav
+02:53:57  core.transcriber          INFO     Transcribing: output\tmp36fpv_om\input_000.wav
+02:53:57  faster_whisper            INFO     Processing audio with duration 05:08.033
+02:53:58  faster_whisper            INFO     VAD filter removed 03:50.401 of audio
+02:54:01  core.transcriber          INFO     Transcribed 27 segments  |  detected lang: en (100%)
+02:54:22  core.synthesizer          INFO     Loading TTS model: tts_models/multilingual/multi-dataset/xtts_v2
+02:54:42  core.synthesizer          INFO     TTS model loaded
+02:57:01  core.synthesizer          INFO     TTS model unloaded, VRAM freed
+02:57:01  core.assembler            INFO     Mixed with background track: output\tmp36fpv_om\separated_000\background.wav
+02:57:02  core.assembler            INFO     Assembled 200.3 s \u2192 output\tmpu249u22y\0x01BC8677_ru.wav
+02:57:03  asyncio                   ERROR    Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
 handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
 Traceback (most recent call last):
   File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
@@ -25,15 +157,34 @@ Traceback (most recent call last):
   File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
     self._sock.shutdown(socket.SHUT_RDWR)
 ConnectionResetError: [WinError 10054] ”даленный хост принудительно разорвал существующее подключение
-22:00:44  core.transcriber          INFO     Transcribing: output\tmph85oly2t\input.wav
-22:00:44  faster_whisper            INFO     Processing audio with duration 00:01.155
-22:00:44  faster_whisper            INFO     VAD filter removed 00:00.000 of audio
-22:00:45  core.transcriber          INFO     Transcribed 1 segments  |  detected lang: en (100%)
-22:00:50  core.synthesizer          INFO     Loading TTS model: tts_models/multilingual/multi-dataset/xtts_v2
-D:\Projects\RuVoiCer\venv\Lib\site-packages\TTS\tts\layers\xtts\xtts_manager.py:5: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  self.speakers = torch.load(speaker_file_path)
-D:\Projects\RuVoiCer\venv\Lib\site-packages\TTS\utils\io.py:54: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
-  return torch.load(f, map_location=map_location, **kwargs)
-22:01:11  core.synthesizer          INFO     TTS model loaded
-22:01:15  core.synthesizer          INFO     TTS model unloaded, VRAM freed
-22:01:15  core.assembler            INFO     Assembled 3.1 s \u2192 output\tmph85oly2t\result.wav
+03:00:23  core.separator            INFO     Loading Demucs htdemucs modelЕ
+03:00:24  core.separator            INFO     Demucs loaded on cuda
+03:00:29  core.separator            INFO     Separated: vocals \u2192 output\tmpz2lqllfh\separated_000\vocals.wav, background \u2192 output\tmpz2lqllfh\separated_000\background.wav
+03:00:29  core.separator            INFO     Demucs unloaded
+03:00:29  core.diarizer             INFO     Loading pyannote speaker-diarization-3.1 Е
+03:00:31  core.diarizer             INFO     Diarization pipeline loaded on cuda
+03:00:31  core.diarizer             INFO     Diarizing: output\tmpz2lqllfh\separated_000\vocals.wav
+D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\models\blocks\pooling.py:103: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1858.)
+  std = sequences.std(dim=-1, correction=1)
+03:00:39  core.diarizer             INFO     Diarization: 53 turns, 3 speakers detected
+03:00:40  core.diarizer             INFO     Diarization pipeline unloaded
+03:00:40  core.diarizer             INFO     Extracted 3.7 s reference for SPEAKER_00 \u2192 ref_SPEAKER_00.wav
+03:00:40  core.diarizer             INFO     Extracted 3.2 s reference for SPEAKER_01 \u2192 ref_SPEAKER_01.wav
+03:00:40  core.diarizer             INFO     Extracted 13.3 s reference for SPEAKER_02 \u2192 ref_SPEAKER_02.wav
+03:00:40  core.transcriber          INFO     Transcribing: output\tmpz2lqllfh\input_000.wav
+03:00:40  faster_whisper            INFO     Processing audio with duration 03:16.033
+03:00:41  faster_whisper            INFO     VAD filter removed 01:07.041 of audio
+03:00:45  core.transcriber          INFO     Transcribed 68 segments  |  detected lang: en (100%)
+03:01:15  core.synthesizer          INFO     Loading TTS model: tts_models/multilingual/multi-dataset/xtts_v2
+03:01:34  core.synthesizer          INFO     TTS model loaded
+03:04:55  core.synthesizer          INFO     TTS model unloaded, VRAM freed
+03:04:56  core.assembler            INFO     Mixed with background track: output\tmpz2lqllfh\separated_000\background.wav
+03:04:56  core.assembler            INFO     Assembled 254.0 s \u2192 output\tmpgaugkfdl\0x00C5704C_ru.wav
+03:04:59  asyncio                   ERROR    Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] ”даленный хост принудительно разорвал существующее подключение

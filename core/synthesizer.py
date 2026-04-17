@@ -29,11 +29,27 @@ class Synthesizer:
     # ── lifecycle ────────────────────────────────────────────────────────
 
     def load(self):
+        # TTS 0.22.0 uses torch.load without weights_only=False,
+        # but PyTorch >=2.6 defaults to weights_only=True.
+        # Monkey-patch to restore old behaviour for trusted Coqui checkpoints.
+        import functools
+        _orig_load = torch.load
+        @functools.wraps(_orig_load)
+        def _patched_load(*args, **kwargs):
+            kwargs.setdefault("weights_only", False)
+            return _orig_load(*args, **kwargs)
+        torch.load = _patched_load
+
+        # torchaudio patch is applied globally in config.py
+
         from TTS.api import TTS
 
         logger.info("Loading TTS model: %s", self.model_name)
         self.tts = TTS(self.model_name).to(self.device)
         logger.info("TTS model loaded")
+
+        # Restore original torch.load
+        torch.load = _orig_load
 
     def unload(self):
         if self.tts is not None:
@@ -78,7 +94,7 @@ class Synthesizer:
 
     # ── synthesis ────────────────────────────────────────────────────────
 
-    def synthesize(self, text: str, reference_audio: str, output_path: str, language="ru"):
+    def synthesize(self, text: str, reference_audio: str | list[str], output_path: str, language="ru"):
         """Synthesize one piece of text; handles automatic chunk splitting."""
         if self.tts is None:
             self.load()
@@ -113,7 +129,7 @@ class Synthesizer:
     def synthesize_segments(
         self,
         segments: list[dict],
-        reference_audio: str,
+        reference_audio: str | list[str],
         output_dir: str,
         language: str = "ru",
         progress_callback=None,

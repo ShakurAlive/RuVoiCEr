@@ -2,6 +2,7 @@
 faster-whisper>=1.0.0
 TTS>=0.22.0
 pydub>=0.25.1
+pyannote.audio>=4.0.0
 
 # ── Translation (NLLB offline fallback) ─────────────────────────────────
 transformers>=4.38.0
