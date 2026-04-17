@@ -1,64 +1,63 @@
-"""Text-to-Speech with voice cloning via Coqui XTTS-v2."""
+"""Text-to-Speech with voice cloning via CosyVoice 3.0 (FunAudioLLM).
+
+Replaces XTTS-v2 for significantly better prosody and speaker similarity
+in cross-lingual (EN → RU) voice cloning.
+"""
 
 import gc
 import logging
 import os
+import sys
+from pathlib import Path
 
 import torch
+import torchaudio
 
 logger = logging.getLogger(__name__)
 
-# Accept Coqui TTS license
-os.environ["COQUI_TOS_AGREED"] = "1"
+# Add CosyVoice and its Matcha-TTS dependency to sys.path
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+_COSYVOICE_DIR = _PROJECT_ROOT / "third_party" / "CosyVoice"
+_MATCHA_DIR = _COSYVOICE_DIR / "third_party" / "Matcha-TTS"
+
+for _p in [str(_COSYVOICE_DIR), str(_MATCHA_DIR)]:
+    if _p not in sys.path:
+        sys.path.insert(0, _p)
 
 
 class Synthesizer:
-    """XTTS-v2 wrapper with VRAM management and long-text splitting."""
+    """CosyVoice 3.0 wrapper with VRAM management."""
 
-    MAX_CHARS = 250  # XTTS produces best quality on shorter inputs
+    MAX_CHARS = 300  # CosyVoice handles longer inputs better than XTTS
 
-    def __init__(
-        self,
-        model_name="tts_models/multilingual/multi-dataset/xtts_v2",
-        device="cuda",
-    ):
-        self.model_name = model_name
+    # CosyVoice3 (Qwen2-based) requires <|endofprompt|> token in cross-lingual text
+    _PROMPT_PREFIX = "You are a helpful assistant.<|endofprompt|>"
+
+    MODEL_DIR = str(_PROJECT_ROOT / "pretrained_models" / "Fun-CosyVoice3-0.5B")
+
+    def __init__(self, device="cuda"):
         self.device = device
-        self.tts = None
+        self.model = None
+        self.sample_rate = None
 
     # ── lifecycle ────────────────────────────────────────────────────────
 
     def load(self):
-        # TTS 0.22.0 uses torch.load without weights_only=False,
-        # but PyTorch >=2.6 defaults to weights_only=True.
-        # Monkey-patch to restore old behaviour for trusted Coqui checkpoints.
-        import functools
-        _orig_load = torch.load
-        @functools.wraps(_orig_load)
-        def _patched_load(*args, **kwargs):
-            kwargs.setdefault("weights_only", False)
-            return _orig_load(*args, **kwargs)
-        torch.load = _patched_load
+        from cosyvoice.cli.cosyvoice import AutoModel
 
-        # torchaudio patch is applied globally in config.py
-
-        from TTS.api import TTS
-
-        logger.info("Loading TTS model: %s", self.model_name)
-        self.tts = TTS(self.model_name).to(self.device)
-        logger.info("TTS model loaded")
-
-        # Restore original torch.load
-        torch.load = _orig_load
+        logger.info("Loading CosyVoice3 model…")
+        self.model = AutoModel(model_dir=self.MODEL_DIR)
+        self.sample_rate = self.model.sample_rate
+        logger.info("CosyVoice3 loaded (sample_rate=%d)", self.sample_rate)
 
     def unload(self):
-        if self.tts is not None:
-            del self.tts
-            self.tts = None
+        if self.model is not None:
+            del self.model
+            self.model = None
             gc.collect()
             if torch.cuda.is_available():
                 torch.cuda.empty_cache()
-            logger.info("TTS model unloaded, VRAM freed")
+            logger.info("CosyVoice3 unloaded, VRAM freed")
 
     # ── helpers ──────────────────────────────────────────────────────────
 
@@ -95,34 +94,32 @@ class Synthesizer:
     # ── synthesis ────────────────────────────────────────────────────────
 
     def synthesize(self, text: str, reference_audio: str | list[str], output_path: str, language="ru"):
-        """Synthesize one piece of text; handles automatic chunk splitting."""
-        if self.tts is None:
+        """Synthesize one piece of text using CosyVoice3 cross-lingual mode."""
+        if self.model is None:
             self.load()
+
+        # CosyVoice expects a single reference path
+        ref_path = reference_audio if isinstance(reference_audio, str) else reference_audio[0]
 
         chunks = self._split_text(text, self.MAX_CHARS)
 
-        if len(chunks) == 1:
-            self.tts.tts_to_file(
-                text=chunks[0],
-                speaker_wav=reference_audio,
-                language=language,
-                file_path=output_path,
-            )
-        else:
-            from pydub import AudioSegment
+        all_audio = []
+        for chunk in chunks:
+            # CosyVoice3 requires <|endofprompt|> token in text
+            tagged_chunk = self._PROMPT_PREFIX + chunk
+            for result in self.model.inference_cross_lingual(
+                tagged_chunk,
+                ref_path,
+                stream=False,
+            ):
+                all_audio.append(result["tts_speech"])
 
-            combined = AudioSegment.empty()
-            for idx, chunk in enumerate(chunks):
-                chunk_path = output_path.replace(".wav", f"_c{idx}.wav")
-                self.tts.tts_to_file(
-                    text=chunk,
-                    speaker_wav=reference_audio,
-                    language=language,
-                    file_path=chunk_path,
-                )
-                combined += AudioSegment.from_file(chunk_path)
-                os.remove(chunk_path)
-            combined.export(output_path, format="wav")
+        if not all_audio:
+            raise RuntimeError(f"CosyVoice produced no audio for: {text[:50]}")
+
+        # Concatenate all chunks
+        combined = torch.cat(all_audio, dim=-1)
+        torchaudio.save(output_path, combined, self.sample_rate)
 
         return output_path
 
@@ -136,7 +133,7 @@ class Synthesizer:
     ) -> list[dict]:
         """Synthesize every translated segment. Returns enriched segment dicts."""
         os.makedirs(output_dir, exist_ok=True)
-        if self.tts is None:
+        if self.model is None:
             self.load()
 
         results: list[dict] = []

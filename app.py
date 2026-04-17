@@ -5,7 +5,7 @@ with voice cloning and intonation preservation.
 Pipeline:
   1. ASR  (faster-whisper)   → English transcript + timestamps
   2. Translation (Ollama / NLLB-200)  → Russian text
-  3. TTS  (XTTS-v2 voice clone)       → Russian speech in original voice
+  3. TTS  (CosyVoice 3.0 voice clone)  → Russian speech in original voice
   4. Assembly  (pydub)                 → final .wav
 """
 
@@ -394,7 +394,7 @@ def process_batch(
         yield state()
 
     # ── 5. Synthesize ────────────────────────────────────────────────────
-    log("🔊 Загрузка TTS модели (XTTS-v2)…")
+    log("🔊 Загрузка TTS модели (CosyVoice 3.0)…")
     yield state()
     synthesizer = Synthesizer()
     synthesizer.load()

@@ -1,16 +1,15 @@
-02:53:00  ruvoicer                  INFO     Pre-loading Whisper model (before Gradio starts)...
-02:53:00  core.transcriber          INFO     Loading Whisper model: large-v3-turbo
-02:53:02  core.transcriber          INFO     Whisper model loaded
-02:53:02  ruvoicer                  INFO     Whisper ready.
-02:53:05  httpx                     INFO     HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
-02:53:05  httpx                     INFO     HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
-02:53:05  httpx                     INFO     HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
-02:53:22  core.separator            INFO     Loading Demucs htdemucs model…
-  0%|          | 0.00/80.2M [00:00<?, ?B/s]  0%|          | 128k/80.2M [00:00<01:38, 850kB/s]  0%|          | 384k/80.2M [00:00<00:49, 1.69MB/s]  1%|1         | 1.12M/80.2M [00:00<00:20, 3.98MB/s]  3%|3         | 2.75M/80.2M [00:00<00:09, 8.54MB/s]  9%|8         | 7.12M/80.2M [00:00<00:03, 21.0MB/s] 13%|#3        | 10.6M/80.2M [00:00<00:03, 21.2MB/s] 18%|#7        | 14.1M/80.2M [00:00<00:03, 22.4MB/s] 27%|##7       | 21.8M/80.2M [00:00<00:01, 37.0MB/s] 32%|###2      | 25.8M/80.2M [00:01<00:01, 32.3MB/s] 38%|###7      | 30.4M/80.2M [00:01<00:01, 36.2MB/s] 46%|####6     | 37.2M/80.2M [00:01<00:00, 45.4MB/s] 52%|#####2    | 42.0M/80.2M [00:01<00:01, 39.1MB/s] 59%|#####8    | 47.0M/80.2M [00:01<00:00, 38.9MB/s] 64%|######3   | 51.0M/80.2M [00:01<00:00, 39.4MB/s] 69%|######8   | 55.0M/80.2M [00:01<00:00, 40.0MB/s] 74%|#######3  | 59.0M/80.2M [00:02<00:00, 33.6MB/s] 86%|########6 | 69.2M/80.2M [00:02<00:00, 51.1MB/s] 93%|#########3| 74.8M/80.2M [00:02<00:00, 39.7MB/s]100%|##########| 80.2M/80.2M [00:02<00:00, 34.1MB/s]
-02:53:26  core.separator            INFO     Demucs loaded on cuda
-02:53:35  core.separator            INFO     Separated: vocals \u2192 output\tmp36fpv_om\separated_000\vocals.wav, background \u2192 output\tmp36fpv_om\separated_000\background.wav
-02:53:35  core.separator            INFO     Demucs unloaded
-W0418 02:53:39.873000 38000 venv\Lib\site-packages\torch\utils\flop_counter.py:29] triton not found; flop counting will not work for triton kernels
+04:18:28  ruvoicer                  INFO     Pre-loading Whisper model (before Gradio starts)...
+04:18:28  core.transcriber          INFO     Loading Whisper model: large-v3-turbo
+04:18:32  core.transcriber          INFO     Whisper model loaded
+04:18:32  ruvoicer                  INFO     Whisper ready.
+04:18:34  httpx                     INFO     HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+04:18:35  httpx                     INFO     HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+04:18:35  httpx                     INFO     HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+04:18:45  core.separator            INFO     Loading Demucs htdemucs model…
+04:18:45  core.separator            INFO     Demucs loaded on cuda
+04:18:46  core.separator            INFO     Separated: vocals \u2192 output\tmpikr7p4tc\separated_000\vocals.wav, background \u2192 output\tmpikr7p4tc\separated_000\background.wav
+04:18:46  core.separator            INFO     Demucs unloaded
+W0418 04:18:49.188000 16608 venv\Lib\site-packages\torch\utils\flop_counter.py:29] triton not found; flop counting will not work for triton kernels
 D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\core\io.py:47: UserWarning: 
 torchcodec is not installed correctly so built-in audio decoding will fail. Solutions are:
 * use audio preloaded in-memory as a {'waveform': (channel, time) torch.Tensor, 'sample_rate': int} dictionary;
@@ -123,9 +122,9 @@ Traceback (most recent call last):
 OSError: Could not load this library: D:\Projects\RuVoiCer\venv\Lib\site-packages\torchcodec\libtorchcodec_core4.dll
 [end of libtorchcodec loading traceback].
   warnings.warn(
-02:53:40  core.diarizer             INFO     Loading pyannote speaker-diarization-3.1 …
-02:53:43  core.diarizer             INFO     Diarization pipeline loaded on cuda
-02:53:43  core.diarizer             INFO     Diarizing: output\tmp36fpv_om\separated_000\vocals.wav
+04:18:50  core.diarizer             INFO     Loading pyannote speaker-diarization-3.1 …
+04:18:55  core.diarizer             INFO     Diarization pipeline loaded on cuda
+04:18:55  core.diarizer             INFO     Diarizing: output\tmpikr7p4tc\separated_000\vocals.wav
 D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\utils\reproducibility.py:74: ReproducibilityWarning: TensorFloat-32 (TF32) has been disabled as it might lead to reproducibility issues and lower accuracy.
 It can be re-enabled by calling
    >>> import torch
@@ -136,20 +135,277 @@ See https://github.com/pyannote/pyannote-audio/issues/1370 for more details.
   warnings.warn(
 D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\models\blocks\pooling.py:103: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1858.)
   std = sequences.std(dim=-1, correction=1)
-02:53:56  core.diarizer             INFO     Diarization: 78 turns, 2 speakers detected
-02:53:57  core.diarizer             INFO     Diarization pipeline unloaded
-02:53:57  core.diarizer             INFO     Extracted 8.3 s reference for SPEAKER_00 \u2192 ref_SPEAKER_00.wav
-02:53:57  core.diarizer             INFO     Extracted 4.4 s reference for SPEAKER_01 \u2192 ref_SPEAKER_01.wav
-02:53:57  core.transcriber          INFO     Transcribing: output\tmp36fpv_om\input_000.wav
-02:53:57  faster_whisper            INFO     Processing audio with duration 05:08.033
-02:53:58  faster_whisper            INFO     VAD filter removed 03:50.401 of audio
-02:54:01  core.transcriber          INFO     Transcribed 27 segments  |  detected lang: en (100%)
-02:54:22  core.synthesizer          INFO     Loading TTS model: tts_models/multilingual/multi-dataset/xtts_v2
-02:54:42  core.synthesizer          INFO     TTS model loaded
-02:57:01  core.synthesizer          INFO     TTS model unloaded, VRAM freed
-02:57:01  core.assembler            INFO     Mixed with background track: output\tmp36fpv_om\separated_000\background.wav
-02:57:02  core.assembler            INFO     Assembled 200.3 s \u2192 output\tmpu249u22y\0x01BC8677_ru.wav
-02:57:03  asyncio                   ERROR    Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+D:\Projects\RuVoiCer\venv\Lib\site-packages\numpy\_core\fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+D:\Projects\RuVoiCer\venv\Lib\site-packages\numpy\_core\_methods.py:134: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+04:18:55  core.diarizer             INFO     Diarization: 1 turns, 1 speakers detected
+04:18:55  core.diarizer             INFO     Diarization pipeline unloaded
+04:18:55  core.diarizer             INFO     Extracted 1.5 s reference for SPEAKER_00 \u2192 ref_SPEAKER_00.wav
+04:18:55  core.transcriber          INFO     Transcribing: output\tmpikr7p4tc\input_000.wav
+04:18:56  faster_whisper            INFO     Processing audio with duration 00:01.550
+04:18:56  faster_whisper            INFO     VAD filter removed 00:00.000 of audio
+04:18:56  core.transcriber          INFO     Transcribed 1 segments  |  detected lang: en (100%)
+04:19:01  core.synthesizer          INFO     Loading CosyVoice3 model…
+04:19:08  root                      INFO     input frame rate=25
+D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\nn\utils\weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+Special tokens have been added in the vocabulary, make sure the associated word embeddings are fine-tuned or trained.
+ [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 1 9 : 1 9 . 1 0 3 7 7 3 9   [ W : o n n x r u n t i m e : ,   t r a n s f o r m e r _ m e m c p y . c c : 1 1 1   o n n x r u n t i m e : : M e m c p y T r a n s f o r m e r : : A p p l y I m p l ]   1 4   M e m c p y   n o d e s   a r e   a d d e d   t o   t h e   g r a p h   m a i n _ g r a p h   f o r   C U D A E x e c u t i o n P r o v i d e r .   I t   m i g h t   h a v e   n e g a t i v e   i m p a c t   o n   p e r f o r m a n c e   ( i n c l u d i n g   u n a b l e   t o   r u n   C U D A   g r a p h ) .   S e t   s e s s i o n _ o p t i o n s . l o g _ s e v e r i t y _ l e v e l = 1   t o   s e e   t h e   d e t a i l   l o g s   b e f o r e   t h i s   m e s s a g e .  [ m 
+  [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 1 9 : 1 9 . 1 2 1 0 2 3 7   [ W : o n n x r u n t i m e : ,   s e s s i o n _ s t a t e . c c : 1 3 2 7   o n n x r u n t i m e : : V e r i f y E a c h N o d e I s A s s i g n e d T o A n E p ]   S o m e   n o d e s   w e r e   n o t   a s s i g n e d   t o   t h e   p r e f e r r e d   e x e c u t i o n   p r o v i d e r s   w h i c h   m a y   o r   m a y   n o t   h a v e   a n   n e g a t i v e   i m p a c t   o n   p e r f o r m a n c e .   e . g .   O R T   e x p l i c i t l y   a s s i g n s   s h a p e   r e l a t e d   o p s   t o   C P U   t o   i m p r o v e   p e r f .  [ m 
+  [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 1 9 : 1 9 . 1 2 1 9 5 5 2   [ W : o n n x r u n t i m e : ,   s e s s i o n _ s t a t e . c c : 1 3 2 9   o n n x r u n t i m e : : V e r i f y E a c h N o d e I s A s s i g n e d T o A n E p ]   R e r u n n i n g   w i t h   v e r b o s e   o u t p u t   o n   a   n o n - m i n i m a l   b u i l d   w i l l   s h o w   n o d e   a s s i g n m e n t s .  [ m 
+ 04:19:21  root                      INFO     use wetext frontend
+04:19:25  core.synthesizer          INFO     CosyVoice3 loaded (sample_rate=24000)
+  0%|          | 0/1 [00:00<?, ?it/s]04:19:25  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Бля, я тусуюсь, кайфанул, короче.
+D:\Projects\RuVoiCer\third_party\CosyVoice\cosyvoice\cli\model.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with self.llm_context, torch.cuda.amp.autocast(self.fp16 is True and hasattr(self.llm, 'vllm') is False):
+D:\Projects\RuVoiCer\third_party\CosyVoice\cosyvoice\cli\model.py:426: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(self.fp16):
+04:23:35  root                      INFO     yield speech len 2.36, rtf 105.7666506807683
+100%|##########| 1/1 [04:09<00:00, 249.85s/it]100%|##########| 1/1 [04:09<00:00, 249.85s/it]
+04:23:35  core.synthesizer          INFO     CosyVoice3 unloaded, VRAM freed
+04:23:35  core.assembler            INFO     Mixed with background track: output\tmpikr7p4tc\separated_000\background.wav
+04:23:35  core.assembler            INFO     Assembled 2.4 s \u2192 output\tmpw6iu0alp\ACTIVITY_LEAVING_01_ru.wav
+04:24:22  core.separator            INFO     Loading Demucs htdemucs model…
+04:24:23  core.separator            INFO     Demucs loaded on cuda
+04:24:31  core.separator            INFO     Separated: vocals \u2192 output\tmpy45fk0za\separated_000\vocals.wav, background \u2192 output\tmpy45fk0za\separated_000\background.wav
+04:24:32  core.separator            INFO     Demucs unloaded
+04:24:32  core.diarizer             INFO     Loading pyannote speaker-diarization-3.1 …
+04:24:33  core.diarizer             INFO     Diarization pipeline loaded on cuda
+04:24:33  core.diarizer             INFO     Diarizing: output\tmpy45fk0za\separated_000\vocals.wav
+D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\models\blocks\pooling.py:103: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1858.)
+  std = sequences.std(dim=-1, correction=1)
+04:24:41  core.diarizer             INFO     Diarization: 52 turns, 3 speakers detected
+04:24:42  core.diarizer             INFO     Diarization pipeline unloaded
+04:24:42  core.diarizer             INFO     Extracted 3.7 s reference for SPEAKER_00 \u2192 ref_SPEAKER_00.wav
+04:24:42  core.diarizer             INFO     Extracted 14.3 s reference for SPEAKER_01 \u2192 ref_SPEAKER_01.wav
+04:24:42  core.diarizer             INFO     Extracted 2.5 s reference for SPEAKER_02 \u2192 ref_SPEAKER_02.wav
+04:24:42  core.transcriber          INFO     Transcribing: output\tmpy45fk0za\input_000.wav
+04:24:42  faster_whisper            INFO     Processing audio with duration 03:16.033
+04:24:43  faster_whisper            INFO     VAD filter removed 01:07.041 of audio
+04:24:47  core.transcriber          INFO     Transcribed 68 segments  |  detected lang: en (100%)
+04:25:16  core.synthesizer          INFO     Loading CosyVoice3 model…
+04:25:19  root                      INFO     input frame rate=25
+D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\nn\utils\weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+ [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 2 5 : 2 9 . 5 9 4 6 8 5 1   [ W : o n n x r u n t i m e : ,   t r a n s f o r m e r _ m e m c p y . c c : 1 1 1   o n n x r u n t i m e : : M e m c p y T r a n s f o r m e r : : A p p l y I m p l ]   1 4   M e m c p y   n o d e s   a r e   a d d e d   t o   t h e   g r a p h   m a i n _ g r a p h   f o r   C U D A E x e c u t i o n P r o v i d e r .   I t   m i g h t   h a v e   n e g a t i v e   i m p a c t   o n   p e r f o r m a n c e   ( i n c l u d i n g   u n a b l e   t o   r u n   C U D A   g r a p h ) .   S e t   s e s s i o n _ o p t i o n s . l o g _ s e v e r i t y _ l e v e l = 1   t o   s e e   t h e   d e t a i l   l o g s   b e f o r e   t h i s   m e s s a g e .  [ m 
+  [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 2 5 : 2 9 . 6 1 0 7 6 3 2   [ W : o n n x r u n t i m e : ,   s e s s i o n _ s t a t e . c c : 1 3 2 7   o n n x r u n t i m e : : V e r i f y E a c h N o d e I s A s s i g n e d T o A n E p ]   S o m e   n o d e s   w e r e   n o t   a s s i g n e d   t o   t h e   p r e f e r r e d   e x e c u t i o n   p r o v i d e r s   w h i c h   m a y   o r   m a y   n o t   h a v e   a n   n e g a t i v e   i m p a c t   o n   p e r f o r m a n c e .   e . g .   O R T   e x p l i c i t l y   a s s i g n s   s h a p e   r e l a t e d   o p s   t o   C P U   t o   i m p r o v e   p e r f .  [ m 
+  [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 2 5 : 2 9 . 6 1 1 9 6 8 3   [ W : o n n x r u n t i m e : ,   s e s s i o n _ s t a t e . c c : 1 3 2 9   o n n x r u n t i m e : : V e r i f y E a c h N o d e I s A s s i g n e d T o A n E p ]   R e r u n n i n g   w i t h   v e r b o s e   o u t p u t   o n   a   n o n - m i n i m a l   b u i l d   w i l l   s h o w   n o d e   a s s i g n m e n t s .  [ m 
+ 04:25:30  root                      INFO     use wetext frontend
+04:25:34  core.synthesizer          INFO     CosyVoice3 loaded (sample_rate=24000)
+  0%|          | 0/1 [00:00<?, ?it/s]04:25:35  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Эй, чувак.
+D:\Projects\RuVoiCer\third_party\CosyVoice\cosyvoice\cli\model.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with self.llm_context, torch.cuda.amp.autocast(self.fp16 is True and hasattr(self.llm, 'vllm') is False):
+D:\Projects\RuVoiCer\third_party\CosyVoice\cosyvoice\cli\model.py:426: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(self.fp16):
+04:26:49  root                      INFO     yield speech len 0.8, rtf 92.1962782740593
+100%|##########| 1/1 [01:14<00:00, 74.37s/it]100%|##########| 1/1 [01:14<00:00, 74.37s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:26:49  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Чего тебе надо?
+04:29:33  root                      INFO     yield speech len 1.0, rtf 164.1205539703369
+100%|##########| 1/1 [02:44<00:00, 164.28s/it]100%|##########| 1/1 [02:44<00:00, 164.28s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:29:34  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я твой друг, блять. Мне ничего не надо, чувак.
+04:30:22  root                      INFO     yield speech len 2.68, rtf 18.06858680141506
+100%|##########| 1/1 [00:49<00:00, 49.23s/it]100%|##########| 1/1 [00:49<00:00, 49.23s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:23  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Да ладно, твоя фирма и так норм, да?
+04:30:27  root                      INFO     yield speech len 2.44, rtf 1.631100549072516
+100%|##########| 1/1 [00:04<00:00,  4.42s/it]100%|##########| 1/1 [00:04<00:00,  4.43s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:27  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Как всегда.
+04:30:29  root                      INFO     yield speech len 0.84, rtf 2.279952878043765
+100%|##########| 1/1 [00:02<00:00,  2.36s/it]100%|##########| 1/1 [00:02<00:00,  2.36s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:30  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Да, спасибо. Очень ценю, ёбать.
+04:30:33  root                      INFO     yield speech len 2.32, rtf 1.633196863634833
+100%|##########| 1/1 [00:03<00:00,  3.94s/it]100%|##########| 1/1 [00:03<00:00,  3.94s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:33  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Так, семья всё ещё не вернулась, да?
+04:30:37  root                      INFO     yield speech len 2.0, rtf 1.6409755945205688
+100%|##########| 1/1 [00:03<00:00,  3.39s/it]100%|##########| 1/1 [00:03<00:00,  3.39s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:37  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Не.
+04:30:38  root                      INFO     yield speech len 0.52, rtf 2.9391485911149244
+100%|##########| 1/1 [00:01<00:00,  1.64s/it]100%|##########| 1/1 [00:01<00:00,  1.64s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:39  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Блять, она же блять дура, блять, чувак.
+04:30:42  root                      INFO     yield speech len 1.92, rtf 1.7137413223584494
+100%|##########| 1/1 [00:03<00:00,  3.42s/it]100%|##########| 1/1 [00:03<00:00,  3.42s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:42  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Всё это дерьмо, что было в последнее время…
+04:30:46  root                      INFO     yield speech len 2.44, rtf 1.5888212157077477
+100%|##########| 1/1 [00:03<00:00,  3.97s/it]100%|##########| 1/1 [00:03<00:00,  3.97s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:46  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Блин, кажется, я наконец-то всё понял.
+04:30:51  root                      INFO     yield speech len 3.24, rtf 1.5372945202721489
+100%|##########| 1/1 [00:05<00:00,  5.04s/it]100%|##########| 1/1 [00:05<00:00,  5.04s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:52  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я знаю. Звучит как бред.
+04:30:56  root                      INFO     yield speech len 2.24, rtf 1.6576295452458516
+100%|##########| 1/1 [00:04<00:00,  4.27s/it]100%|##########| 1/1 [00:04<00:00,  4.27s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:30:56  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Да нет, на самом деле, это не звучит как бред, понимаешь?
+04:31:01  root                      INFO     yield speech len 2.76, rtf 1.6737801441247915
+100%|##########| 1/1 [00:05<00:00,  5.18s/it]100%|##########| 1/1 [00:05<00:00,  5.18s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:01  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ты, блять, уб**е**р**ъ**ц.
+04:31:04  root                      INFO     yield speech len 1.12, rtf 2.062369670186724
+100%|##########| 1/1 [00:02<00:00,  2.70s/it]100%|##########| 1/1 [00:02<00:00,  2.70s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:04  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Знаешь, ты же мужик, действующий, ебань!
+04:31:08  root                      INFO     yield speech len 2.2, rtf 1.630180315537886
+100%|##########| 1/1 [00:04<00:00,  4.09s/it]100%|##########| 1/1 [00:04<00:00,  4.09s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:08  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ты не сидишь на диванах, ты забираешь очки.
+04:31:13  root                      INFO     yield speech len 3.16, rtf 1.5589450733571113
+100%|##########| 1/1 [00:05<00:00,  5.32s/it]100%|##########| 1/1 [00:05<00:00,  5.32s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:14  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ты вернулся, блять, чувак.
+04:31:16  root                      INFO     yield speech len 1.32, rtf 1.9767670920400908
+100%|##########| 1/1 [00:02<00:00,  3.00s/it]100%|##########| 1/1 [00:02<00:00,  3.00s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:17  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Мы вернулись.
+04:31:19  root                      INFO     yield speech len 1.0, rtf 2.0827245712280273
+100%|##########| 1/1 [00:02<00:00,  2.59s/it]100%|##########| 1/1 [00:02<00:00,  2.59s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:19  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Всё нормально?
+04:31:21  root                      INFO     yield speech len 0.84, rtf 2.1489563442411876
+100%|##########| 1/1 [00:02<00:00,  2.35s/it]100%|##########| 1/1 [00:02<00:00,  2.35s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:22  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Всё, что нам нужно сделать, это вытащить Брэда.
+04:31:26  root                      INFO     yield speech len 2.68, rtf 1.5979910964396462
+100%|##########| 1/1 [00:04<00:00,  4.66s/it]100%|##########| 1/1 [00:04<00:00,  4.66s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:26  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>и тогда всё будет чики-пуки, чувак.
+04:31:30  root                      INFO     yield speech len 2.0, rtf 1.8889567852020264
+100%|##########| 1/1 [00:04<00:00,  4.26s/it]100%|##########| 1/1 [00:04<00:00,  4.26s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:31  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Фрэнклин, он нас делает мультикультурными, блять.
+04:31:36  root                      INFO     yield speech len 3.68, rtf 1.5669369827146116
+100%|##########| 1/1 [00:06<00:00,  6.20s/it]100%|##########| 1/1 [00:06<00:00,  6.20s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:37  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Лэстер делает это киберным.
+04:31:40  root                      INFO     yield speech len 1.76, rtf 1.8137850544669412
+100%|##########| 1/1 [00:03<00:00,  3.73s/it]100%|##########| 1/1 [00:03<00:00,  3.73s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:41  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Мы как современная Америка, блять.
+04:31:44  root                      INFO     yield speech len 1.76, rtf 1.752345941283486
+100%|##########| 1/1 [00:03<00:00,  3.59s/it]100%|##########| 1/1 [00:03<00:00,  3.59s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:44  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Мы просто себе говначка набрали.
+04:31:48  root                      INFO     yield speech len 1.76, rtf 1.775870675390417
+100%|##########| 1/1 [00:03<00:00,  3.65s/it]100%|##########| 1/1 [00:03<00:00,  3.65s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:48  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Бам!
+04:31:49  root                      INFO     yield speech len 0.48, rtf 2.9941916465759277
+100%|##########| 1/1 [00:01<00:00,  1.89s/it]100%|##########| 1/1 [00:01<00:00,  1.89s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:50  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Не, это не то.
+04:31:52  root                      INFO     yield speech len 1.08, rtf 2.0075544163032815
+100%|##########| 1/1 [00:02<00:00,  2.23s/it]100%|##########| 1/1 [00:02<00:00,  2.23s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:52  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>У меня есть деньги.
+04:31:54  root                      INFO     yield speech len 1.16, rtf 1.9831680018326334
+100%|##########| 1/1 [00:02<00:00,  2.41s/it]100%|##########| 1/1 [00:02<00:00,  2.41s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:54  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Это только тебя бесит.
+04:31:57  root                      INFO     yield speech len 1.24, rtf 1.9356608390808105
+100%|##########| 1/1 [00:02<00:00,  2.50s/it]100%|##########| 1/1 [00:02<00:00,  2.50s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:31:57  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я хочу снимать кино.
+04:32:00  root                      INFO     yield speech len 1.32, rtf 1.8553376197814941
+100%|##########| 1/1 [00:02<00:00,  2.71s/it]100%|##########| 1/1 [00:02<00:00,  2.71s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:00  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Отлично.
+04:32:02  root                      INFO     yield speech len 1.04, rtf 2.0077159771552453
+100%|##########| 1/1 [00:02<00:00,  2.28s/it]100%|##########| 1/1 [00:02<00:00,  2.28s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:02  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Отлично же.
+04:32:04  root                      INFO     yield speech len 0.88, rtf 2.1515201438557017
+100%|##########| 1/1 [00:02<00:00,  2.02s/it]100%|##########| 1/1 [00:02<00:00,  2.02s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:04  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>И, ну, так где же меня это вообще оставляет?
+04:32:08  root                      INFO     yield speech len 2.48, rtf 1.6031355627121464
+100%|##########| 1/1 [00:04<00:00,  4.04s/it]100%|##########| 1/1 [00:04<00:00,  4.04s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:08  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Во втором акте твоей жизни?
+04:32:27  root                      INFO     yield speech len 1.48, rtf 12.877448346163776
+100%|##########| 1/1 [00:19<00:00, 19.13s/it]100%|##########| 1/1 [00:19<00:00, 19.13s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:27  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Мы это последний большой заказ сделаем.
+04:32:37  root                      INFO     yield speech len 2.4, rtf 3.9240486423174543
+100%|##########| 1/1 [00:09<00:00,  9.54s/it]100%|##########| 1/1 [00:09<00:00,  9.54s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:37  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>и потом мы развалим эту контору.
+04:32:42  root                      INFO     yield speech len 2.04, rtf 2.2819087785833023
+100%|##########| 1/1 [00:04<00:00,  4.71s/it]100%|##########| 1/1 [00:04<00:00,  4.71s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:42  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Это не шутка, слышь!
+04:32:45  root                      INFO     yield speech len 1.2, rtf 2.1152424812316895
+100%|##########| 1/1 [00:02<00:00,  2.99s/it]100%|##########| 1/1 [00:02<00:00,  2.99s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:45  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Всё нормально?
+04:32:47  root                      INFO     yield speech len 0.84, rtf 2.15715453738258
+100%|##########| 1/1 [00:02<00:00,  2.16s/it]100%|##########| 1/1 [00:02<00:00,  2.16s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:47  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Это блять способ жизни!
+04:32:51  root                      INFO     yield speech len 1.88, rtf 1.9612650922004213
+100%|##########| 1/1 [00:04<00:00,  4.14s/it]100%|##########| 1/1 [00:04<00:00,  4.14s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:52  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Блять, у меня семья есть!
+04:32:55  root                      INFO     yield speech len 1.48, rtf 1.948300890020422
+100%|##########| 1/1 [00:03<00:00,  3.41s/it]100%|##########| 1/1 [00:03<00:00,  3.41s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:32:55  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Да ладно, блять, вообще нихуя нет!
+04:32:59  root                      INFO     yield speech len 2.36, rtf 1.7649352550506592
+100%|##########| 1/1 [00:04<00:00,  4.64s/it]100%|##########| 1/1 [00:04<00:00,  4.64s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:00  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Никому меня вообще фигачиться не надо!
+04:33:03  root                      INFO     yield speech len 2.04, rtf 1.6257669411453546
+100%|##########| 1/1 [00:03<00:00,  3.61s/it]100%|##########| 1/1 [00:03<00:00,  3.61s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:03  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я так думаю.
+04:33:06  root                      INFO     yield speech len 1.0, rtf 2.1265857219696045
+100%|##########| 1/1 [00:02<00:00,  2.69s/it]100%|##########| 1/1 [00:02<00:00,  2.69s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:06  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебать тебя!
+04:33:08  root                      INFO     yield speech len 1.2, rtf 2.00575590133667
+100%|##########| 1/1 [00:02<00:00,  2.73s/it]100%|##########| 1/1 [00:02<00:00,  2.73s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:09  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я видел твою могилу.
+04:33:12  root                      INFO     yield speech len 1.56, rtf 1.9386555903997176
+100%|##########| 1/1 [00:03<00:00,  3.44s/it]100%|##########| 1/1 [00:03<00:00,  3.44s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:12  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я тебя вылoжил на понт.
+04:33:15  root                      INFO     yield speech len 1.56, rtf 1.8770280556801038
+100%|##########| 1/1 [00:03<00:00,  3.33s/it]100%|##########| 1/1 [00:03<00:00,  3.33s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:16  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>И тут выясняется, что всё...
+04:33:19  root                      INFO     yield speech len 1.48, rtf 1.890547211105759
+100%|##########| 1/1 [00:03<00:00,  3.50s/it]100%|##########| 1/1 [00:03<00:00,  3.50s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:19  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Блять, я о тебе ебал.
+04:33:22  root                      INFO     yield speech len 1.52, rtf 1.9099117893921702
+100%|##########| 1/1 [00:03<00:00,  3.38s/it]100%|##########| 1/1 [00:03<00:00,  3.38s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:22  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я был/была неправ/а.
+04:33:26  root                      INFO     yield speech len 1.72, rtf 1.8152200898458792
+100%|##########| 1/1 [00:03<00:00,  3.37s/it]100%|##########| 1/1 [00:03<00:00,  3.37s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:26  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Всё.
+04:33:28  root                      INFO     yield speech len 0.52, rtf 2.641882804723886
+100%|##########| 1/1 [00:01<00:00,  1.89s/it]100%|##########| 1/1 [00:01<00:00,  1.89s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:28  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ты жив, блять.
+04:33:30  root                      INFO     yield speech len 1.08, rtf 2.1392153369055853
+100%|##########| 1/1 [00:02<00:00,  2.85s/it]100%|##########| 1/1 [00:02<00:00,  2.85s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:31  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ты не мужик, блять.
+04:33:34  root                      INFO     yield speech len 1.2, rtf 2.0997275908788047
+100%|##########| 1/1 [00:03<00:00,  3.10s/it]100%|##########| 1/1 [00:03<00:00,  3.10s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:34  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Чё ты тут вообще, блять?
+04:33:37  root                      INFO     yield speech len 1.56, rtf 1.8141792370722842
+100%|##########| 1/1 [00:03<00:00,  3.11s/it]100%|##########| 1/1 [00:03<00:00,  3.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:37  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я – твоя ёбаная крыса!
+04:33:40  root                      INFO     yield speech len 1.52, rtf 1.8422380874031468
+100%|##########| 1/1 [00:03<00:00,  3.39s/it]100%|##########| 1/1 [00:03<00:00,  3.39s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:41  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Да пошли они нахуй, хватит там угрожать, блять!
+04:33:46  root                      INFO     yield speech len 3.48, rtf 1.616192891679961
+100%|##########| 1/1 [00:05<00:00,  5.94s/it]100%|##########| 1/1 [00:05<00:00,  5.94s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:47  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Блин, ну да.
+04:33:49  root                      INFO     yield speech len 1.16, rtf 2.065245653020925
+100%|##########| 1/1 [00:02<00:00,  2.75s/it]100%|##########| 1/1 [00:02<00:00,  2.75s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:50  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Давай я тебе кое-что спрошу, понял?
+04:33:53  root                      INFO     yield speech len 1.76, rtf 1.794963533228094
+100%|##########| 1/1 [00:03<00:00,  3.73s/it]100%|##########| 1/1 [00:03<00:00,  3.73s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:53  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Короче, вот о чём я думаю.
+04:33:56  root                      INFO     yield speech len 1.4, rtf 1.9954977716718403
+100%|##########| 1/1 [00:03<00:00,  3.35s/it]100%|##########| 1/1 [00:03<00:00,  3.35s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:33:57  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>В Северном Янктоне, блять.
+04:33:59  root                      INFO     yield speech len 1.4, rtf 1.947725330080305
+100%|##########| 1/1 [00:03<00:00,  3.26s/it]100%|##########| 1/1 [00:03<00:00,  3.26s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:00  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Кто там у тебя в месте, собственно, хоронили?
+04:34:04  root                      INFO     yield speech len 2.2, rtf 1.7107436873696065
+100%|##########| 1/1 [00:04<00:00,  4.36s/it]100%|##########| 1/1 [00:04<00:00,  4.36s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:04  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я вообще об этом не думал.
+04:34:07  root                      INFO     yield speech len 1.44, rtf 1.7995397249857585
+100%|##########| 1/1 [00:02<00:00,  2.75s/it]100%|##########| 1/1 [00:02<00:00,  2.75s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:07  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ты понял, о чём я думаю?
+04:34:09  root                      INFO     yield speech len 1.36, rtf 1.8018406980177935
+100%|##########| 1/1 [00:02<00:00,  2.52s/it]100%|##########| 1/1 [00:02<00:00,  2.52s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:10  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я вообще не в теме был.
+04:34:14  root                      INFO     yield speech len 2.24, rtf 1.7015823296138217
+100%|##########| 1/1 [00:04<00:00,  4.47s/it]100%|##########| 1/1 [00:04<00:00,  4.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:14  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебаный ты, прежный сука!
+04:34:17  root                      INFO     yield speech len 1.48, rtf 1.9257980424004633
+100%|##########| 1/1 [00:03<00:00,  3.38s/it]100%|##########| 1/1 [00:03<00:00,  3.38s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:18  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебать ты долбаный.
+04:34:21  root                      INFO     yield speech len 1.56, rtf 1.8592499769650972
+100%|##########| 1/1 [00:03<00:00,  3.47s/it]100%|##########| 1/1 [00:03<00:00,  3.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:21  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебать ты долбаный!
+04:34:24  root                      INFO     yield speech len 1.24, rtf 1.9625294593072706
+100%|##########| 1/1 [00:02<00:00,  2.92s/it]100%|##########| 1/1 [00:02<00:00,  2.92s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:24  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Эй, Т!
+04:34:26  root                      INFO     yield speech len 0.84, rtf 2.115230333237421
+100%|##########| 1/1 [00:02<00:00,  2.35s/it]100%|##########| 1/1 [00:02<00:00,  2.35s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:34:27  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебать тебя в рот!
+04:34:30  root                      INFO     yield speech len 1.56, rtf 1.8542761986072247
+100%|##########| 1/1 [00:03<00:00,  3.42s/it]100%|##########| 1/1 [00:03<00:00,  3.42s/it]
+04:34:30  core.synthesizer          INFO     CosyVoice3 unloaded, VRAM freed
+04:34:31  core.assembler            INFO     Mixed with background track: output\tmpy45fk0za\separated_000\background.wav
+04:34:32  core.assembler            INFO     Assembled 196.8 s \u2192 output\tmpcexut9v6\0x00C5704C_ru.wav
+04:34:34  asyncio                   ERROR    Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
 handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
 Traceback (most recent call last):
   File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
@@ -157,30 +413,598 @@ Traceback (most recent call last):
   File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
     self._sock.shutdown(socket.SHUT_RDWR)
 ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
-03:00:23  core.separator            INFO     Loading Demucs htdemucs model…
-03:00:24  core.separator            INFO     Demucs loaded on cuda
-03:00:29  core.separator            INFO     Separated: vocals \u2192 output\tmpz2lqllfh\separated_000\vocals.wav, background \u2192 output\tmpz2lqllfh\separated_000\background.wav
-03:00:29  core.separator            INFO     Demucs unloaded
-03:00:29  core.diarizer             INFO     Loading pyannote speaker-diarization-3.1 …
-03:00:31  core.diarizer             INFO     Diarization pipeline loaded on cuda
-03:00:31  core.diarizer             INFO     Diarizing: output\tmpz2lqllfh\separated_000\vocals.wav
+04:45:05  core.separator            INFO     Loading Demucs htdemucs model…
+04:45:06  core.separator            INFO     Demucs loaded on cuda
+04:45:10  core.separator            INFO     Separated: vocals \u2192 output\tmpitr84thj\separated_000\vocals.wav, background \u2192 output\tmpitr84thj\separated_000\background.wav
+04:45:10  core.separator            INFO     Demucs unloaded
+04:45:10  core.diarizer             INFO     Loading pyannote speaker-diarization-3.1 …
+04:45:12  core.diarizer             INFO     Diarization pipeline loaded on cuda
+04:45:12  core.diarizer             INFO     Diarizing: output\tmpitr84thj\separated_000\vocals.wav
 D:\Projects\RuVoiCer\venv\Lib\site-packages\pyannote\audio\models\blocks\pooling.py:103: UserWarning: std(): degrees of freedom is <= 0. Correction should be strictly less than the reduction factor (input numel divided by output numel). (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\pytorch\aten\src\ATen\native\ReduceOps.cpp:1858.)
   std = sequences.std(dim=-1, correction=1)
-03:00:39  core.diarizer             INFO     Diarization: 53 turns, 3 speakers detected
-03:00:40  core.diarizer             INFO     Diarization pipeline unloaded
-03:00:40  core.diarizer             INFO     Extracted 3.7 s reference for SPEAKER_00 \u2192 ref_SPEAKER_00.wav
-03:00:40  core.diarizer             INFO     Extracted 3.2 s reference for SPEAKER_01 \u2192 ref_SPEAKER_01.wav
-03:00:40  core.diarizer             INFO     Extracted 13.3 s reference for SPEAKER_02 \u2192 ref_SPEAKER_02.wav
-03:00:40  core.transcriber          INFO     Transcribing: output\tmpz2lqllfh\input_000.wav
-03:00:40  faster_whisper            INFO     Processing audio with duration 03:16.033
-03:00:41  faster_whisper            INFO     VAD filter removed 01:07.041 of audio
-03:00:45  core.transcriber          INFO     Transcribed 68 segments  |  detected lang: en (100%)
-03:01:15  core.synthesizer          INFO     Loading TTS model: tts_models/multilingual/multi-dataset/xtts_v2
-03:01:34  core.synthesizer          INFO     TTS model loaded
-03:04:55  core.synthesizer          INFO     TTS model unloaded, VRAM freed
-03:04:56  core.assembler            INFO     Mixed with background track: output\tmpz2lqllfh\separated_000\background.wav
-03:04:56  core.assembler            INFO     Assembled 254.0 s \u2192 output\tmpgaugkfdl\0x00C5704C_ru.wav
-03:04:59  asyncio                   ERROR    Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+04:45:21  core.diarizer             INFO     Diarization: 60 turns, 2 speakers detected
+04:45:21  core.diarizer             INFO     Diarization pipeline unloaded
+04:45:21  core.diarizer             INFO     Extracted 24.0 s reference for SPEAKER_00 \u2192 ref_SPEAKER_00.wav
+04:45:21  core.diarizer             INFO     Extracted 2.4 s reference for SPEAKER_01 \u2192 ref_SPEAKER_01.wav
+04:45:21  core.transcriber          INFO     Transcribing: output\tmpitr84thj\input_000.wav
+04:45:22  faster_whisper            INFO     Processing audio with duration 03:18.600
+04:45:22  faster_whisper            INFO     VAD filter removed 00:19.752 of audio
+04:45:37  core.transcriber          INFO     Transcribed 186 segments  |  detected lang: en (100%)
+04:46:49  core.synthesizer          INFO     Loading CosyVoice3 model…
+04:46:52  root                      INFO     input frame rate=25
+D:\Projects\RuVoiCer\venv\Lib\site-packages\torch\nn\utils\weight_norm.py:144: FutureWarning: `torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.
+  WeightNorm.apply(module, name, dim)
+ [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 4 7 : 0 2 . 6 1 2 7 1 1 1   [ W : o n n x r u n t i m e : ,   t r a n s f o r m e r _ m e m c p y . c c : 1 1 1   o n n x r u n t i m e : : M e m c p y T r a n s f o r m e r : : A p p l y I m p l ]   1 4   M e m c p y   n o d e s   a r e   a d d e d   t o   t h e   g r a p h   m a i n _ g r a p h   f o r   C U D A E x e c u t i o n P r o v i d e r .   I t   m i g h t   h a v e   n e g a t i v e   i m p a c t   o n   p e r f o r m a n c e   ( i n c l u d i n g   u n a b l e   t o   r u n   C U D A   g r a p h ) .   S e t   s e s s i o n _ o p t i o n s . l o g _ s e v e r i t y _ l e v e l = 1   t o   s e e   t h e   d e t a i l   l o g s   b e f o r e   t h i s   m e s s a g e .  [ m 
+  [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 4 7 : 0 2 . 6 2 9 2 3 9 3   [ W : o n n x r u n t i m e : ,   s e s s i o n _ s t a t e . c c : 1 3 2 7   o n n x r u n t i m e : : V e r i f y E a c h N o d e I s A s s i g n e d T o A n E p ]   S o m e   n o d e s   w e r e   n o t   a s s i g n e d   t o   t h e   p r e f e r r e d   e x e c u t i o n   p r o v i d e r s   w h i c h   m a y   o r   m a y   n o t   h a v e   a n   n e g a t i v e   i m p a c t   o n   p e r f o r m a n c e .   e . g .   O R T   e x p l i c i t l y   a s s i g n s   s h a p e   r e l a t e d   o p s   t o   C P U   t o   i m p r o v e   p e r f .  [ m 
+  [ 0 ; 9 3 m 2 0 2 6 - 0 4 - 1 8   0 4 : 4 7 : 0 2 . 6 3 0 2 7 0 9   [ W : o n n x r u n t i m e : ,   s e s s i o n _ s t a t e . c c : 1 3 2 9   o n n x r u n t i m e : : V e r i f y E a c h N o d e I s A s s i g n e d T o A n E p ]   R e r u n n i n g   w i t h   v e r b o s e   o u t p u t   o n   a   n o n - m i n i m a l   b u i l d   w i l l   s h o w   n o d e   a s s i g n m e n t s .  [ m 
+ 04:47:03  root                      INFO     use wetext frontend
+04:47:07  core.synthesizer          INFO     CosyVoice3 loaded (sample_rate=24000)
+  0%|          | 0/1 [00:00<?, ?it/s]04:47:09  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Задерживаем цель. У вас есть право молчать.
+D:\Projects\RuVoiCer\third_party\CosyVoice\cosyvoice\cli\model.py:103: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with self.llm_context, torch.cuda.amp.autocast(self.fp16 is True and hasattr(self.llm, 'vllm') is False):
+D:\Projects\RuVoiCer\third_party\CosyVoice\cosyvoice\cli\model.py:426: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(self.fp16):
+04:51:52  root                      INFO     yield speech len 3.48, rtf 81.41116972627312
+100%|##########| 1/1 [04:44<00:00, 284.93s/it]100%|##########| 1/1 [04:44<00:00, 284.93s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:51:53  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Брось, убирайся с моего места, говорю тебе! Брось, убирайся с моего места, говорю тебе!
+04:52:02  root                      INFO     yield speech len 5.32, rtf 1.6408091649076992
+100%|##########| 1/1 [00:09<00:00,  9.64s/it]100%|##########| 1/1 [00:09<00:00,  9.64s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:52:02  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ехай, ехай, ехай!
+04:52:04  root                      INFO     yield speech len 1.28, rtf 1.821456290781498
+100%|##########| 1/1 [00:02<00:00,  2.47s/it]100%|##########| 1/1 [00:02<00:00,  2.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:52:05  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ехай, ехай, ехай, ехай, ехай, ехай!
+04:52:24  root                      INFO     yield speech len 13.2, rtf 1.453837716218197
+100%|##########| 1/1 [00:20<00:00, 20.07s/it]100%|##########| 1/1 [00:20<00:00, 20.07s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:52:24  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Иди, иди, иди, иди!
+04:52:27  root                      INFO     yield speech len 1.84, rtf 1.6527949467949246
+100%|##########| 1/1 [00:03<00:00,  3.10s/it]100%|##########| 1/1 [00:03<00:00,  3.10s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:52:28  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайтесь! В любой день, братаны!
+04:52:49  root                      INFO     yield speech len 2.68, rtf 7.976846997417621
+100%|##########| 1/1 [00:21<00:00, 21.44s/it]100%|##########| 1/1 [00:21<00:00, 21.44s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:52:49  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Готов прорваться.
+04:52:51  root                      INFO     yield speech len 1.16, rtf 1.8977942137882629
+100%|##########| 1/1 [00:02<00:00,  2.31s/it]100%|##########| 1/1 [00:02<00:00,  2.31s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:52:52  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Собираю улики. Разъедаю ловушку.
+04:52:57  root                      INFO     yield speech len 2.76, rtf 1.882007502127385
+100%|##########| 1/1 [00:05<00:00,  5.91s/it]100%|##########| 1/1 [00:05<00:00,  5.91s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:52:58  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Дверь заблокирована, заклинена, заперта, но замок открыт.
+04:53:05  root                      INFO     yield speech len 4.36, rtf 1.6256049138690352
+100%|##########| 1/1 [00:07<00:00,  7.86s/it]100%|##########| 1/1 [00:07<00:00,  7.86s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:06  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Дверь не заперта. Я её задвинул.
+04:53:10  root                      INFO     yield speech len 2.04, rtf 2.103904766194961
+100%|##########| 1/1 [00:05<00:00,  5.14s/it]100%|##########| 1/1 [00:05<00:00,  5.14s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:11  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Есть тут, вроде, какой-то потенциал.
+04:53:15  root                      INFO     yield speech len 2.08, rtf 2.0065831450315623
+100%|##########| 1/1 [00:04<00:00,  4.71s/it]100%|##########| 1/1 [00:04<00:00,  4.71s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:15  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>С глаз вылезай! С глаз вылезай!
+04:53:19  root                      INFO     yield speech len 2.32, rtf 1.5941113233566284
+100%|##########| 1/1 [00:03<00:00,  3.82s/it]100%|##########| 1/1 [00:03<00:00,  3.82s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:19  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>У нас тут труп, блять. У нас тут труп, слышь.
+04:53:24  root                      INFO     yield speech len 3.44, rtf 1.5207967092824537
+100%|##########| 1/1 [00:05<00:00,  5.29s/it]100%|##########| 1/1 [00:05<00:00,  5.29s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:25  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:28  root                      INFO     yield speech len 0.76, rtf 3.139137908032066
+100%|##########| 1/1 [00:03<00:00,  3.12s/it]100%|##########| 1/1 [00:03<00:00,  3.12s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:28  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:31  root                      INFO     yield speech len 0.76, rtf 3.214472218563682
+100%|##########| 1/1 [00:03<00:00,  3.34s/it]100%|##########| 1/1 [00:03<00:00,  3.34s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:32  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:34  root                      INFO     yield speech len 0.84, rtf 2.9072821140289307
+100%|##########| 1/1 [00:03<00:00,  3.11s/it]100%|##########| 1/1 [00:03<00:00,  3.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:35  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:38  root                      INFO     yield speech len 0.92, rtf 2.8236591297647227
+100%|##########| 1/1 [00:03<00:00,  3.47s/it]100%|##########| 1/1 [00:03<00:00,  3.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:39  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:41  root                      INFO     yield speech len 1.0, rtf 2.6524670124053955
+100%|##########| 1/1 [00:03<00:00,  3.61s/it]100%|##########| 1/1 [00:03<00:00,  3.61s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:42  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:45  root                      INFO     yield speech len 0.92, rtf 2.687998439954675
+100%|##########| 1/1 [00:03<00:00,  3.29s/it]100%|##########| 1/1 [00:03<00:00,  3.29s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:46  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:48  root                      INFO     yield speech len 0.8, rtf 3.304188847541809
+100%|##########| 1/1 [00:03<00:00,  3.57s/it]100%|##########| 1/1 [00:03<00:00,  3.57s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:49  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:52  root                      INFO     yield speech len 1.12, rtf 2.557509924684252
+100%|##########| 1/1 [00:03<00:00,  3.77s/it]100%|##########| 1/1 [00:03<00:00,  3.77s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:53  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:56  root                      INFO     yield speech len 1.12, rtf 2.496683171817234
+100%|##########| 1/1 [00:03<00:00,  3.69s/it]100%|##########| 1/1 [00:03<00:00,  3.69s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:53:57  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:53:59  root                      INFO     yield speech len 0.92, rtf 2.7269448923028032
+100%|##########| 1/1 [00:03<00:00,  3.37s/it]100%|##########| 1/1 [00:03<00:00,  3.37s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:00  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:54:03  root                      INFO     yield speech len 0.96, rtf 2.7290771404902143
+100%|##########| 1/1 [00:03<00:00,  3.42s/it]100%|##########| 1/1 [00:03<00:00,  3.42s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:04  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:54:06  root                      INFO     yield speech len 1.16, rtf 2.4496294301131676
+100%|##########| 1/1 [00:03<00:00,  3.69s/it]100%|##########| 1/1 [00:03<00:00,  3.69s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:07  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:54:10  root                      INFO     yield speech len 0.84, rtf 2.7854084968566895
+100%|##########| 1/1 [00:03<00:00,  3.15s/it]100%|##########| 1/1 [00:03<00:00,  3.15s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:10  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:54:13  root                      INFO     yield speech len 0.8, rtf 2.9578328132629395
+100%|##########| 1/1 [00:03<00:00,  3.14s/it]100%|##########| 1/1 [00:03<00:00,  3.14s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:14  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:54:16  root                      INFO     yield speech len 0.96, rtf 2.695348858833313
+100%|##########| 1/1 [00:03<00:00,  3.41s/it]100%|##########| 1/1 [00:03<00:00,  3.41s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:17  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Двигайся!
+04:54:20  root                      INFO     yield speech len 0.96, rtf 2.7297936379909515
+100%|##########| 1/1 [00:03<00:00,  3.39s/it]100%|##########| 1/1 [00:03<00:00,  3.39s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:21  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Граждан отправлен под арест. Ждём обработки.
+04:54:26  root                      INFO     yield speech len 3.2, rtf 1.7666903883218765
+100%|##########| 1/1 [00:06<00:00,  6.42s/it]100%|##########| 1/1 [00:06<00:00,  6.42s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:27  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Подозреваемый задержан. Ждём привоз.
+04:54:32  root                      INFO     yield speech len 2.64, rtf 1.8115639686584473
+100%|##########| 1/1 [00:05<00:00,  5.61s/it]100%|##########| 1/1 [00:05<00:00,  5.61s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:33  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Граждан ебать, падает. Наёмник ебать, тоже падает.
+04:54:40  root                      INFO     yield speech len 4.04, rtf 1.696379054891001
+100%|##########| 1/1 [00:07<00:00,  7.63s/it]100%|##########| 1/1 [00:07<00:00,  7.63s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:40  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Полицейский ёбаный убит. Повторяю, полицейский ёбаный убит.
+04:54:47  root                      INFO     yield speech len 4.4, rtf 1.6414362734014336
+100%|##########| 1/1 [00:07<00:00,  7.84s/it]100%|##########| 1/1 [00:07<00:00,  7.84s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:48  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Есть тут пацан, гражданский. Нужны медики срочно.
+04:54:54  root                      INFO     yield speech len 3.56, rtf 1.723957999368732
+100%|##########| 1/1 [00:06<00:00,  6.97s/it]100%|##########| 1/1 [00:06<00:00,  6.97s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:54:55  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>У нас тут пацана свалившего есть. Нужны медики срочно!
+04:55:01  root                      INFO     yield speech len 3.44, rtf 1.7676639002422954
+100%|##########| 1/1 [00:06<00:00,  6.84s/it]100%|##########| 1/1 [00:06<00:00,  6.84s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:02  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Полицейский ёбаный вывалился, срочно нужен врач!
+04:55:08  root                      INFO     yield speech len 3.16, rtf 1.8069989319089093
+100%|##########| 1/1 [00:06<00:00,  6.60s/it]100%|##########| 1/1 [00:06<00:00,  6.60s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:09  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебать его в рот.
+04:55:12  root                      INFO     yield speech len 1.44, rtf 2.2336044245296054
+100%|##########| 1/1 [00:04<00:00,  4.08s/it]100%|##########| 1/1 [00:04<00:00,  4.08s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:13  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Брось их в наручники.
+04:55:16  root                      INFO     yield speech len 1.24, rtf 2.341140854743219
+100%|##########| 1/1 [00:03<00:00,  3.86s/it]100%|##########| 1/1 [00:03<00:00,  3.86s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:17  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Разрушь дверь.
+04:55:20  root                      INFO     yield speech len 1.12, rtf 2.428058428423745
+100%|##########| 1/1 [00:03<00:00,  3.59s/it]100%|##########| 1/1 [00:03<00:00,  3.59s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:21  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Взлом и газ.
+04:55:24  root                      INFO     yield speech len 1.24, rtf 2.4151511730686313
+100%|##########| 1/1 [00:03<00:00,  3.79s/it]100%|##########| 1/1 [00:03<00:00,  3.79s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:25  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Взлом и вспышка.
+04:55:28  root                      INFO     yield speech len 1.32, rtf 2.3692929383480186
+100%|##########| 1/1 [00:04<00:00,  4.10s/it]100%|##########| 1/1 [00:04<00:00,  4.10s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:28  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>C2 и Стингер.
+04:55:32  root                      INFO     yield speech len 1.56, rtf 2.2322957332317643
+100%|##########| 1/1 [00:04<00:00,  4.11s/it]100%|##########| 1/1 [00:04<00:00,  4.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:33  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Бегут! Иди!
+04:55:36  root                      INFO     yield speech len 1.36, rtf 2.3555429542765896
+100%|##########| 1/1 [00:03<00:00,  3.96s/it]100%|##########| 1/1 [00:03<00:00,  3.96s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:37  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Посмотри, чёрт возьми, дверь. Проверь её на подёлы.
+04:55:42  root                      INFO     yield speech len 2.72, rtf 1.8184994073475107
+100%|##########| 1/1 [00:05<00:00,  5.73s/it]100%|##########| 1/1 [00:05<00:00,  5.73s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:43  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Закрой дверь.
+04:55:45  root                      INFO     yield speech len 1.0, rtf 2.5465850830078125
+100%|##########| 1/1 [00:03<00:00,  3.47s/it]100%|##########| 1/1 [00:03<00:00,  3.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:45  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Забери это для меня.
+04:55:48  root                      INFO     yield speech len 1.44, rtf 1.760347518655989
+100%|##########| 1/1 [00:02<00:00,  2.66s/it]100%|##########| 1/1 [00:02<00:00,  2.67s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:49  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Завали их.
+04:55:51  root                      INFO     yield speech len 0.76, rtf 3.0084321373387386
+100%|##########| 1/1 [00:03<00:00,  3.06s/it]100%|##########| 1/1 [00:03<00:00,  3.06s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:52  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Брось лампу.
+04:55:54  root                      INFO     yield speech len 0.84, rtf 2.8089355854761036
+100%|##########| 1/1 [00:03<00:00,  3.25s/it]100%|##########| 1/1 [00:03<00:00,  3.25s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:55  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Вытащи его на чистую воду.
+04:55:59  root                      INFO     yield speech len 1.48, rtf 2.323545314170219
+100%|##########| 1/1 [00:04<00:00,  4.08s/it]100%|##########| 1/1 [00:04<00:00,  4.08s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:55:59  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Заебать дверь.
+04:56:02  root                      INFO     yield speech len 1.16, rtf 2.4241599543341277
+100%|##########| 1/1 [00:03<00:00,  3.39s/it]100%|##########| 1/1 [00:03<00:00,  3.39s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:03  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебать ему в лицо фейсом.
+04:56:07  root                      INFO     yield speech len 1.76, rtf 2.10076624696905
+100%|##########| 1/1 [00:04<00:00,  4.59s/it]100%|##########| 1/1 [00:04<00:00,  4.59s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:07  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Возьми палочку.
+04:56:10  root                      INFO     yield speech len 1.36, rtf 2.294372285113615
+100%|##########| 1/1 [00:03<00:00,  3.72s/it]100%|##########| 1/1 [00:03<00:00,  3.72s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:11  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Вытащи ебало.
+04:56:14  root                      INFO     yield speech len 0.96, rtf 2.6734257737795515
+100%|##########| 1/1 [00:03<00:00,  3.31s/it]100%|##########| 1/1 [00:03<00:00,  3.31s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:15  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Выключи оружие, блять.
+04:56:18  root                      INFO     yield speech len 1.4, rtf 2.3242001874106273
+100%|##########| 1/1 [00:04<00:00,  4.10s/it]100%|##########| 1/1 [00:04<00:00,  4.10s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:19  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Выключи это.
+04:56:21  root                      INFO     yield speech len 0.96, rtf 2.687293787797292
+100%|##########| 1/1 [00:03<00:00,  3.45s/it]100%|##########| 1/1 [00:03<00:00,  3.45s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:22  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Сообщи это, чтобы поговорить об этом.
+04:56:26  root                      INFO     yield speech len 1.56, rtf 2.2010774184495974
+100%|##########| 1/1 [00:04<00:00,  4.18s/it]100%|##########| 1/1 [00:04<00:00,  4.18s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:27  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Блать, делайте менее смертоносное, чуваки.
+04:56:33  root                      INFO     yield speech len 3.92, rtf 1.777831997190203
+100%|##########| 1/1 [00:07<00:00,  7.85s/it]100%|##########| 1/1 [00:07<00:00,  7.85s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:34  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Оружие – запрещено.
+04:56:38  root                      INFO     yield speech len 1.84, rtf 2.0026354686073633
+100%|##########| 1/1 [00:04<00:00,  4.47s/it]100%|##########| 1/1 [00:04<00:00,  4.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:39  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Входи.
+04:56:41  root                      INFO     yield speech len 0.72, rtf 3.1426188018586902
+100%|##########| 1/1 [00:03<00:00,  3.06s/it]100%|##########| 1/1 [00:03<00:00,  3.06s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:42  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Держи на этом.
+04:56:45  root                      INFO     yield speech len 1.12, rtf 2.564134555203574
+100%|##########| 1/1 [00:03<00:00,  3.76s/it]100%|##########| 1/1 [00:03<00:00,  3.76s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:46  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Переключи цели.
+04:56:49  root                      INFO     yield speech len 1.2, rtf 2.4613742033640547
+100%|##########| 1/1 [00:03<00:00,  3.83s/it]100%|##########| 1/1 [00:03<00:00,  3.83s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:50  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Держи тут.
+04:56:52  root                      INFO     yield speech len 0.68, rtf 3.336400494855993
+100%|##########| 1/1 [00:03<00:00,  3.15s/it]100%|##########| 1/1 [00:03<00:00,  3.15s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:53  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Отпиши и убери.
+04:56:56  root                      INFO     yield speech len 1.12, rtf 2.4473047682217186
+100%|##########| 1/1 [00:03<00:00,  3.51s/it]100%|##########| 1/1 [00:03<00:00,  3.51s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:56:56  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебашь и убирай.
+04:56:59  root                      INFO     yield speech len 1.08, rtf 2.569353801232797
+100%|##########| 1/1 [00:03<00:00,  3.69s/it]100%|##########| 1/1 [00:03<00:00,  3.69s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:00  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>ебать и вычистить
+04:57:03  root                      INFO     yield speech len 0.88, rtf 2.946589480746876
+100%|##########| 1/1 [00:03<00:00,  3.42s/it]100%|##########| 1/1 [00:03<00:00,  3.42s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:03  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебать, блять, вычистить.
+04:57:06  root                      INFO     yield speech len 1.2, rtf 2.419873674710592
+100%|##########| 1/1 [00:03<00:00,  3.54s/it]100%|##########| 1/1 [00:03<00:00,  3.54s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:07  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Проходи и убирай всё.
+04:57:11  root                      INFO     yield speech len 1.48, rtf 2.2085085108473494
+100%|##########| 1/1 [00:04<00:00,  4.19s/it]100%|##########| 1/1 [00:04<00:00,  4.19s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:11  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Сдвинься куда-нибудь.
+04:57:15  root                      INFO     yield speech len 1.36, rtf 2.4795865311342125
+100%|##########| 1/1 [00:04<00:00,  4.14s/it]100%|##########| 1/1 [00:04<00:00,  4.14s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:16  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Открыто и ясно.
+04:57:19  root                      INFO     yield speech len 1.4, rtf 2.2642847469874794
+100%|##########| 1/1 [00:04<00:00,  4.05s/it]100%|##########| 1/1 [00:04<00:00,  4.05s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:20  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Дрова и чистим.
+04:57:23  root                      INFO     yield speech len 1.16, rtf 2.532706384001107
+100%|##########| 1/1 [00:03<00:00,  3.75s/it]100%|##########| 1/1 [00:03<00:00,  3.75s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:23  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Бум и чёрт возьми.
+04:57:27  root                      INFO     yield speech len 1.52, rtf 2.213651882974725
+100%|##########| 1/1 [00:03<00:00,  3.86s/it]100%|##########| 1/1 [00:03<00:00,  3.86s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:28  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Стингер и чисто.
+04:57:31  root                      INFO     yield speech len 1.44, rtf 2.394725547896491
+100%|##########| 1/1 [00:04<00:00,  4.33s/it]100%|##########| 1/1 [00:04<00:00,  4.33s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:32  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Открой эту дверь.
+04:57:35  root                      INFO     yield speech len 1.04, rtf 2.627431429349459
+100%|##########| 1/1 [00:03<00:00,  3.55s/it]100%|##########| 1/1 [00:03<00:00,  3.55s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:35  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Открой сука замок.
+04:57:39  root                      INFO     yield speech len 1.44, rtf 2.233220140139262
+100%|##########| 1/1 [00:03<00:00,  3.94s/it]100%|##########| 1/1 [00:03<00:00,  3.94s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:39  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Вытри эту дверь.
+04:57:43  root                      INFO     yield speech len 1.2, rtf 2.5312399864196777
+100%|##########| 1/1 [00:03<00:00,  3.88s/it]100%|##########| 1/1 [00:03<00:00,  3.88s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:43  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Пошли.
+04:57:46  root                      INFO     yield speech len 0.52, rtf 4.002858583743755
+100%|##########| 1/1 [00:02<00:00,  2.97s/it]100%|##########| 1/1 [00:02<00:00,  2.97s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:47  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Шуруп и убирайся.
+04:57:50  root                      INFO     yield speech len 1.28, rtf 2.342524193227291
+100%|##########| 1/1 [00:03<00:00,  3.88s/it]100%|##########| 1/1 [00:03<00:00,  3.88s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:50  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Шотсон, ЦС, вычистили.
+04:57:55  root                      INFO     yield speech len 2.24, rtf 1.8958984741142817
+100%|##########| 1/1 [00:05<00:00,  5.08s/it]100%|##########| 1/1 [00:05<00:00,  5.08s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:57:56  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Пуля сверкнула и пролетела.
+04:57:59  root                      INFO     yield speech len 1.84, rtf 2.131019467892854
+100%|##########| 1/1 [00:04<00:00,  4.79s/it]100%|##########| 1/1 [00:04<00:00,  4.79s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:00  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Шустрили и всё прочистили.
+04:58:05  root                      INFO     yield speech len 2.08, rtf 1.998464075418619
+100%|##########| 1/1 [00:04<00:00,  4.99s/it]100%|##########| 1/1 [00:04<00:00,  4.99s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:05  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Накопи себе.
+04:58:07  root                      INFO     yield speech len 1.2, rtf 1.5960057576497397
+100%|##########| 1/1 [00:02<00:00,  2.30s/it]100%|##########| 1/1 [00:02<00:00,  2.30s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:07  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Сделано.
+04:58:09  root                      INFO     yield speech len 0.92, rtf 1.9266734952511995
+100%|##########| 1/1 [00:02<00:00,  2.15s/it]100%|##########| 1/1 [00:02<00:00,  2.15s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:10  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Входи.
+04:58:11  root                      INFO     yield speech len 0.72, rtf 2.285919255680508
+100%|##########| 1/1 [00:02<00:00,  2.04s/it]100%|##########| 1/1 [00:02<00:00,  2.04s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:12  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Связываюсь!
+04:58:13  root                      INFO     yield speech len 0.84, rtf 2.0761498383113315
+100%|##########| 1/1 [00:02<00:00,  2.11s/it]100%|##########| 1/1 [00:02<00:00,  2.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:14  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я на него глаз наметил.
+04:58:16  root                      INFO     yield speech len 1.44, rtf 1.4535880751079984
+100%|##########| 1/1 [00:02<00:00,  2.47s/it]100%|##########| 1/1 [00:02<00:00,  2.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:17  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я вижу кучу гражданских.
+04:58:20  root                      INFO     yield speech len 1.28, rtf 2.477836236357689
+100%|##########| 1/1 [00:04<00:00,  4.10s/it]100%|##########| 1/1 [00:04<00:00,  4.10s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:21  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>У меня на месте взгляда есть цивильный и подозреваемый.
+04:58:27  root                      INFO     yield speech len 3.76, rtf 1.7600094384335458
+100%|##########| 1/1 [00:07<00:00,  7.34s/it]100%|##########| 1/1 [00:07<00:00,  7.34s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:28  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>У меня на глазах несколько гражданских и подозреваемых.
+04:58:34  root                      INFO     yield speech len 3.36, rtf 1.7657035163470678
+100%|##########| 1/1 [00:06<00:00,  6.85s/it]100%|##########| 1/1 [00:06<00:00,  6.85s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:35  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Цели не видно.
+04:58:38  root                      INFO     yield speech len 0.84, rtf 2.883744239807129
+100%|##########| 1/1 [00:03<00:00,  3.31s/it]100%|##########| 1/1 [00:03<00:00,  3.31s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:39  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>В лобке ни одной засранной ямы.
+04:58:44  root                      INFO     yield speech len 3.16, rtf 1.7730458627773236
+100%|##########| 1/1 [00:06<00:00,  6.49s/it]100%|##########| 1/1 [00:06<00:00,  6.49s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:45  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Подозреваемый замечен.
+04:58:48  root                      INFO     yield speech len 1.48, rtf 2.251620389319755
+100%|##########| 1/1 [00:04<00:00,  4.27s/it]100%|##########| 1/1 [00:04<00:00,  4.27s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:49  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Много подозреваемых замечено.
+04:58:54  root                      INFO     yield speech len 2.16, rtf 1.9426328164559823
+100%|##########| 1/1 [00:05<00:00,  5.10s/it]100%|##########| 1/1 [00:05<00:00,  5.10s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:55  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ладно.
+04:58:57  root                      INFO     yield speech len 0.6, rtf 3.7036406993865967
+100%|##########| 1/1 [00:03<00:00,  3.21s/it]100%|##########| 1/1 [00:03<00:00,  3.21s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:58:58  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Принес проводку тут.
+04:59:01  root                      INFO     yield speech len 1.4, rtf 2.2549939155578613
+100%|##########| 1/1 [00:03<00:00,  3.71s/it]100%|##########| 1/1 [00:03<00:00,  3.71s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:02  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Это связано с сигнализацией.
+04:59:06  root                      INFO     yield speech len 2.04, rtf 1.9646749776952406
+100%|##########| 1/1 [00:04<00:00,  4.94s/it]100%|##########| 1/1 [00:04<00:00,  4.94s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:07  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я вижу что-то.
+04:59:09  root                      INFO     yield speech len 1.16, rtf 2.4669264924937284
+100%|##########| 1/1 [00:03<00:00,  3.73s/it]100%|##########| 1/1 [00:03<00:00,  3.73s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:10  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Бля, похоже, это взрывчатка.
+04:59:14  root                      INFO     yield speech len 1.48, rtf 2.230590581893921
+100%|##########| 1/1 [00:04<00:00,  4.12s/it]100%|##########| 1/1 [00:04<00:00,  4.12s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:15  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Держись, ёбаный, там ёбаный прикол заметается!
+04:59:20  root                      INFO     yield speech len 2.76, rtf 1.8156658048215122
+100%|##########| 1/1 [00:05<00:00,  5.92s/it]100%|##########| 1/1 [00:05<00:00,  5.92s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:20  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Это как-то с фейсом заминили.
+04:59:24  root                      INFO     yield speech len 1.48, rtf 2.2172268983480095
+100%|##########| 1/1 [00:04<00:00,  4.10s/it]100%|##########| 1/1 [00:04<00:00,  4.10s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:25  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ладно.
+04:59:27  root                      INFO     yield speech len 0.72, rtf 3.0414948860804243
+100%|##########| 1/1 [00:02<00:00,  3.00s/it]100%|##########| 1/1 [00:02<00:00,  3.00s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:28  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Погоди.
+04:59:30  root                      INFO     yield speech len 0.56, rtf 4.133637036596025
+100%|##########| 1/1 [00:03<00:00,  3.13s/it]100%|##########| 1/1 [00:03<00:00,  3.13s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:31  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Засада тут.
+04:59:34  root                      INFO     yield speech len 1.08, rtf 2.632617950439453
+100%|##########| 1/1 [00:03<00:00,  3.65s/it]100%|##########| 1/1 [00:03<00:00,  3.65s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:35  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Подозреваемый нейтрализован.
+04:59:38  root                      INFO     yield speech len 1.56, rtf 2.226619231395232
+100%|##########| 1/1 [00:04<00:00,  4.38s/it]100%|##########| 1/1 [00:04<00:00,  4.38s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:39  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Чёрт возьми, они в дерьме.
+04:59:42  root                      INFO     yield speech len 1.56, rtf 2.145609641686464
+100%|##########| 1/1 [00:04<00:00,  4.20s/it]100%|##########| 1/1 [00:04<00:00,  4.20s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:43  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Угроза нейтрализована.
+04:59:46  root                      INFO     yield speech len 0.84, rtf 2.988583417165847
+100%|##########| 1/1 [00:03<00:00,  3.11s/it]100%|##########| 1/1 [00:03<00:00,  3.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:46  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Угроза нейтрализована.
+04:59:50  root                      INFO     yield speech len 1.36, rtf 2.311206915799309
+100%|##########| 1/1 [00:03<00:00,  3.96s/it]100%|##########| 1/1 [00:03<00:00,  3.96s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:50  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Подозреваемый нейтрализован.
+04:59:54  root                      INFO     yield speech len 1.48, rtf 2.2116857606011466
+100%|##########| 1/1 [00:04<00:00,  4.06s/it]100%|##########| 1/1 [00:04<00:00,  4.07s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:54  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ловушка обезвредлена.
+04:59:58  root                      INFO     yield speech len 1.56, rtf 2.1435098770337224
+100%|##########| 1/1 [00:04<00:00,  4.08s/it]100%|##########| 1/1 [00:04<00:00,  4.08s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]04:59:59  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ждём приказы.
+05:00:02  root                      INFO     yield speech len 1.0, rtf 2.8318445682525635
+100%|##########| 1/1 [00:03<00:00,  3.72s/it]100%|##########| 1/1 [00:03<00:00,  3.72s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:02  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Встаньте, руки вверх!
+05:00:06  root                      INFO     yield speech len 1.36, rtf 2.3099061320809757
+100%|##########| 1/1 [00:03<00:00,  3.93s/it]100%|##########| 1/1 [00:03<00:00,  3.93s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:06  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Руки вверх.
+05:00:09  root                      INFO     yield speech len 1.0, rtf 2.607043981552124
+100%|##########| 1/1 [00:03<00:00,  3.31s/it]100%|##########| 1/1 [00:03<00:00,  3.31s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:10  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Бросайте оружие.
+05:00:13  root                      INFO     yield speech len 1.2, rtf 2.4210045735041303
+100%|##########| 1/1 [00:03<00:00,  3.80s/it]100%|##########| 1/1 [00:03<00:00,  3.80s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:13  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Бросай оружие.
+05:00:16  root                      INFO     yield speech len 1.28, rtf 2.273448556661606
+100%|##########| 1/1 [00:03<00:00,  3.55s/it]100%|##########| 1/1 [00:03<00:00,  3.55s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:17  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Сейчас.
+05:00:20  root                      INFO     yield speech len 0.68, rtf 3.5791207762325508
+100%|##########| 1/1 [00:03<00:00,  3.27s/it]100%|##########| 1/1 [00:03<00:00,  3.27s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:20  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Размещаем взрывчатку.
+05:00:24  root                      INFO     yield speech len 1.48, rtf 2.250118674458684
+100%|##########| 1/1 [00:04<00:00,  4.00s/it]100%|##########| 1/1 [00:04<00:00,  4.01s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:25  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Развёртываем C2.
+05:00:28  root                      INFO     yield speech len 1.52, rtf 2.1238876016516435
+100%|##########| 1/1 [00:03<00:00,  3.98s/it]100%|##########| 1/1 [00:03<00:00,  3.98s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:29  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Впихиваться в дверь.
+05:00:32  root                      INFO     yield speech len 1.16, rtf 2.5053281208564497
+100%|##########| 1/1 [00:03<00:00,  3.79s/it]100%|##########| 1/1 [00:03<00:00,  3.79s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:33  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Разведёт эту шкуру с этой пушкой.
+05:00:36  root                      INFO     yield speech len 1.48, rtf 2.1953930725922457
+100%|##########| 1/1 [00:04<00:00,  4.09s/it]100%|##########| 1/1 [00:04<00:00,  4.09s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:37  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Держим цель на прицеле.
+05:00:40  root                      INFO     yield speech len 1.52, rtf 2.1734647060695447
+100%|##########| 1/1 [00:04<00:00,  4.16s/it]100%|##########| 1/1 [00:04<00:00,  4.16s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:41  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Проверяю.
+05:00:43  root                      INFO     yield speech len 0.84, rtf 2.916718948455084
+100%|##########| 1/1 [00:03<00:00,  3.27s/it]100%|##########| 1/1 [00:03<00:00,  3.27s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:44  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Держись чисто.
+05:00:47  root                      INFO     yield speech len 1.52, rtf 2.1295989814557528
+100%|##########| 1/1 [00:04<00:00,  4.11s/it]100%|##########| 1/1 [00:04<00:00,  4.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:48  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Проверяем на ловушки.
+05:00:52  root                      INFO     yield speech len 1.56, rtf 2.1525028424385266
+100%|##########| 1/1 [00:04<00:00,  4.38s/it]100%|##########| 1/1 [00:04<00:00,  4.38s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:53  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Закрываю дверь.
+05:00:56  root                      INFO     yield speech len 1.16, rtf 2.492624726788751
+100%|##########| 1/1 [00:03<00:00,  3.74s/it]100%|##########| 1/1 [00:03<00:00,  3.74s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:00:57  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Записываю.
+05:00:59  root                      INFO     yield speech len 1.04, rtf 2.5366753339767456
+100%|##########| 1/1 [00:03<00:00,  3.44s/it]100%|##########| 1/1 [00:03<00:00,  3.44s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:00  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Выключи эту хуйню.
+05:01:03  root                      INFO     yield speech len 1.2, rtf 2.43474821249644
+100%|##########| 1/1 [00:03<00:00,  3.84s/it]100%|##########| 1/1 [00:03<00:00,  3.84s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:04  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Бросаем химию.
+05:01:07  root                      INFO     yield speech len 1.4, rtf 2.2676232882908414
+100%|##########| 1/1 [00:04<00:00,  4.00s/it]100%|##########| 1/1 [00:04<00:00,  4.00s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:08  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Чай газ кончился.
+05:01:10  root                      INFO     yield speech len 1.0, rtf 2.508517265319824
+100%|##########| 1/1 [00:03<00:00,  3.34s/it]100%|##########| 1/1 [00:03<00:00,  3.34s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:11  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Выдохнешься.
+05:01:14  root                      INFO     yield speech len 1.08, rtf 2.552350362141927
+100%|##########| 1/1 [00:03<00:00,  3.60s/it]100%|##########| 1/1 [00:03<00:00,  3.60s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:15  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Взрывайся от вспышки.
+05:01:18  root                      INFO     yield speech len 1.24, rtf 2.2776042261431293
+100%|##########| 1/1 [00:03<00:00,  3.85s/it]100%|##########| 1/1 [00:03<00:00,  3.85s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:19  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Ебать нахаляву.
+05:01:22  root                      INFO     yield speech len 1.2, rtf 2.3322925964991255
+100%|##########| 1/1 [00:03<00:00,  3.55s/it]100%|##########| 1/1 [00:03<00:00,  3.55s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:23  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Стингер, выходим.
+05:01:25  root                      INFO     yield speech len 1.16, rtf 2.431254140261946
+100%|##########| 1/1 [00:03<00:00,  3.73s/it]100%|##########| 1/1 [00:03<00:00,  3.73s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:26  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Я заклиню дверь.
+05:01:29  root                      INFO     yield speech len 1.12, rtf 2.4987859385354176
+100%|##########| 1/1 [00:03<00:00,  3.74s/it]100%|##########| 1/1 [00:03<00:00,  3.74s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:30  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Работаем с менее смертоносным оружием.
+05:01:35  root                      INFO     yield speech len 2.52, rtf 1.8393741713629828
+100%|##########| 1/1 [00:05<00:00,  5.47s/it]100%|##########| 1/1 [00:05<00:00,  5.47s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:36  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Использовать меньше нелетального оружия.
+05:01:40  root                      INFO     yield speech len 2.12, rtf 1.9940533727969763
+100%|##########| 1/1 [00:05<00:00,  5.16s/it]100%|##########| 1/1 [00:05<00:00,  5.16s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:41  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Играть с летальным.
+05:01:44  root                      INFO     yield speech len 1.32, rtf 2.4299123070456763
+100%|##########| 1/1 [00:04<00:00,  4.10s/it]100%|##########| 1/1 [00:04<00:00,  4.10s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:44  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Уходит под воду.
+05:01:47  root                      INFO     yield speech len 1.24, rtf 1.982998655688378
+100%|##########| 1/1 [00:02<00:00,  2.56s/it]100%|##########| 1/1 [00:02<00:00,  2.56s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:47  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Слежу за целью.
+05:01:49  root                      INFO     yield speech len 1.2, rtf 1.837702790896098
+100%|##########| 1/1 [00:02<00:00,  2.26s/it]100%|##########| 1/1 [00:02<00:00,  2.26s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:49  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Понял.
+05:01:51  root                      INFO     yield speech len 0.76, rtf 2.1760131183423495
+100%|##########| 1/1 [00:01<00:00,  1.76s/it]100%|##########| 1/1 [00:01<00:00,  1.76s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:51  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:01:53  root                      INFO     yield speech len 0.84, rtf 2.0662202721550353
+100%|##########| 1/1 [00:01<00:00,  1.82s/it]100%|##########| 1/1 [00:01<00:00,  1.83s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:53  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Падаем назад.
+05:01:55  root                      INFO     yield speech len 1.0, rtf 1.9368178844451904
+100%|##########| 1/1 [00:01<00:00,  1.99s/it]100%|##########| 1/1 [00:01<00:00,  1.99s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:55  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Нет.
+05:01:56  root                      INFO     yield speech len 0.56, rtf 2.4805822542735507
+100%|##########| 1/1 [00:01<00:00,  1.51s/it]100%|##########| 1/1 [00:01<00:00,  1.51s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:57  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>У нас химических огней нет.
+05:01:59  root                      INFO     yield speech len 1.52, rtf 1.7914268531297382
+100%|##########| 1/1 [00:02<00:00,  2.86s/it]100%|##########| 1/1 [00:02<00:00,  2.86s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:01:59  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Не.
+05:02:01  root                      INFO     yield speech len 0.56, rtf 2.610658322061811
+100%|##########| 1/1 [00:01<00:00,  1.54s/it]100%|##########| 1/1 [00:01<00:00,  1.54s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:01  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Нет бензина.
+05:02:03  root                      INFO     yield speech len 1.08, rtf 1.973555706165455
+100%|##########| 1/1 [00:02<00:00,  2.18s/it]100%|##########| 1/1 [00:02<00:00,  2.19s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:03  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Не забудьте, сэр, меня.
+05:02:05  root                      INFO     yield speech len 1.04, rtf 1.9732188719969528
+100%|##########| 1/1 [00:02<00:00,  2.11s/it]100%|##########| 1/1 [00:02<00:00,  2.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:05  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Не вариант с этими флягами.
+05:02:08  root                      INFO     yield speech len 1.36, rtf 1.8702270353541652
+100%|##########| 1/1 [00:02<00:00,  2.61s/it]100%|##########| 1/1 [00:02<00:00,  2.61s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:08  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Мы зеркало-пушку не притащили.
+05:02:10  root                      INFO     yield speech len 1.32, rtf 1.8233707456877737
+100%|##########| 1/1 [00:02<00:00,  2.46s/it]100%|##########| 1/1 [00:02<00:00,  2.46s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:10  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>У нас нет дробовика.
+05:02:13  root                      INFO     yield speech len 1.32, rtf 1.8144024140907056
+100%|##########| 1/1 [00:02<00:00,  2.46s/it]100%|##########| 1/1 [00:02<00:00,  2.46s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:13  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Нет.
+05:02:15  root                      INFO     yield speech len 0.68, rtf 2.268050348057466
+100%|##########| 1/1 [00:01<00:00,  1.60s/it]100%|##########| 1/1 [00:01<00:00,  1.60s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:15  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Без шпионов в запасе.
+05:02:17  root                      INFO     yield speech len 1.28, rtf 1.788405142724514
+100%|##########| 1/1 [00:02<00:00,  2.40s/it]100%|##########| 1/1 [00:02<00:00,  2.40s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:17  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Не могу туда сходить.
+05:02:19  root                      INFO     yield speech len 1.16, rtf 1.8362972243078826
+100%|##########| 1/1 [00:02<00:00,  2.27s/it]100%|##########| 1/1 [00:02<00:00,  2.27s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:19  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Открываем и вычищаем.
+05:02:22  root                      INFO     yield speech len 1.52, rtf 1.7930093564485248
+100%|##########| 1/1 [00:02<00:00,  2.84s/it]100%|##########| 1/1 [00:02<00:00,  2.84s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:23  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Открой.
+05:02:25  root                      INFO     yield speech len 0.88, rtf 2.7895689010620117
+100%|##########| 1/1 [00:03<00:00,  3.23s/it]100%|##########| 1/1 [00:03<00:00,  3.23s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:26  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Разблокировка.
+05:02:29  root                      INFO     yield speech len 1.16, rtf 2.447629797047582
+100%|##########| 1/1 [00:03<00:00,  3.66s/it]100%|##########| 1/1 [00:03<00:00,  3.66s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:30  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:02:32  root                      INFO     yield speech len 0.64, rtf 3.466276451945305
+100%|##########| 1/1 [00:02<00:00,  2.92s/it]100%|##########| 1/1 [00:02<00:00,  2.92s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:33  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Убираем задвижку от двери.
+05:02:37  root                      INFO     yield speech len 1.92, rtf 2.059567968050639
+100%|##########| 1/1 [00:04<00:00,  4.75s/it]100%|##########| 1/1 [00:04<00:00,  4.75s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:37  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:02:39  root                      INFO     yield speech len 0.72, rtf 2.5258421897888184
+100%|##########| 1/1 [00:01<00:00,  1.92s/it]100%|##########| 1/1 [00:01<00:00,  1.92s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:39  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:02:41  root                      INFO     yield speech len 0.84, rtf 2.0850190094539096
+100%|##########| 1/1 [00:01<00:00,  1.86s/it]100%|##########| 1/1 [00:01<00:00,  1.86s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:42  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:02:44  root                      INFO     yield speech len 0.76, rtf 3.0103241142473722
+100%|##########| 1/1 [00:03<00:00,  3.21s/it]100%|##########| 1/1 [00:03<00:00,  3.21s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:45  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:02:47  root                      INFO     yield speech len 0.76, rtf 3.0488967895507812
+100%|##########| 1/1 [00:03<00:00,  3.14s/it]100%|##########| 1/1 [00:03<00:00,  3.14s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:48  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:02:50  root                      INFO     yield speech len 0.8, rtf 2.8751805424690247
+100%|##########| 1/1 [00:03<00:00,  3.19s/it]100%|##########| 1/1 [00:03<00:00,  3.19s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:51  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:02:54  root                      INFO     yield speech len 0.8, rtf 2.887623608112335
+100%|##########| 1/1 [00:03<00:00,  3.20s/it]100%|##########| 1/1 [00:03<00:00,  3.20s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:55  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:02:57  root                      INFO     yield speech len 0.68, rtf 3.2463455901426426
+100%|##########| 1/1 [00:03<00:00,  3.06s/it]100%|##########| 1/1 [00:03<00:00,  3.06s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:02:58  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:00  root                      INFO     yield speech len 0.76, rtf 3.064121070661043
+100%|##########| 1/1 [00:03<00:00,  3.29s/it]100%|##########| 1/1 [00:03<00:00,  3.29s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:01  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:03  root                      INFO     yield speech len 0.68, rtf 3.390121459960937
+100%|##########| 1/1 [00:03<00:00,  3.07s/it]100%|##########| 1/1 [00:03<00:00,  3.07s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:04  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:07  root                      INFO     yield speech len 0.76, rtf 3.0732383853510807
+100%|##########| 1/1 [00:03<00:00,  3.26s/it]100%|##########| 1/1 [00:03<00:00,  3.26s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:07  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:10  root                      INFO     yield speech len 0.72, rtf 3.0821257167392306
+100%|##########| 1/1 [00:03<00:00,  3.07s/it]100%|##########| 1/1 [00:03<00:00,  3.07s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:10  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:13  root                      INFO     yield speech len 0.76, rtf 2.9249498718663265
+100%|##########| 1/1 [00:02<00:00,  2.94s/it]100%|##########| 1/1 [00:02<00:00,  2.94s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:14  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:16  root                      INFO     yield speech len 0.72, rtf 3.108121951421102
+100%|##########| 1/1 [00:03<00:00,  3.12s/it]100%|##########| 1/1 [00:03<00:00,  3.12s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:17  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:19  root                      INFO     yield speech len 0.72, rtf 3.103670809004042
+100%|##########| 1/1 [00:03<00:00,  3.16s/it]100%|##########| 1/1 [00:03<00:00,  3.16s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:20  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:22  root                      INFO     yield speech len 0.8, rtf 2.9385754466056824
+100%|##########| 1/1 [00:03<00:00,  3.11s/it]100%|##########| 1/1 [00:03<00:00,  3.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:23  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:25  root                      INFO     yield speech len 0.76, rtf 3.0272163842853748
+100%|##########| 1/1 [00:03<00:00,  3.19s/it]100%|##########| 1/1 [00:03<00:00,  3.19s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:26  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:29  root                      INFO     yield speech len 0.76, rtf 3.02249412787588
+100%|##########| 1/1 [00:03<00:00,  3.18s/it]100%|##########| 1/1 [00:03<00:00,  3.18s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:30  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:32  root                      INFO     yield speech len 0.72, rtf 3.1156450510025024
+100%|##########| 1/1 [00:03<00:00,  3.08s/it]100%|##########| 1/1 [00:03<00:00,  3.08s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:33  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:35  root                      INFO     yield speech len 0.68, rtf 3.251965606913847
+100%|##########| 1/1 [00:03<00:00,  3.12s/it]100%|##########| 1/1 [00:03<00:00,  3.12s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:36  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:39  root                      INFO     yield speech len 0.8, rtf 3.218894898891449
+100%|##########| 1/1 [00:03<00:00,  3.57s/it]100%|##########| 1/1 [00:03<00:00,  3.57s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:40  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:42  root                      INFO     yield speech len 0.84, rtf 2.8854937780471075
+100%|##########| 1/1 [00:03<00:00,  3.25s/it]100%|##########| 1/1 [00:03<00:00,  3.25s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:43  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:45  root                      INFO     yield speech len 0.72, rtf 3.193690379460653
+100%|##########| 1/1 [00:03<00:00,  3.19s/it]100%|##########| 1/1 [00:03<00:00,  3.19s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:46  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:48  root                      INFO     yield speech len 0.72, rtf 3.1847642527686224
+100%|##########| 1/1 [00:03<00:00,  3.13s/it]100%|##########| 1/1 [00:03<00:00,  3.13s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:49  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:52  root                      INFO     yield speech len 0.8, rtf 2.914070785045624
+100%|##########| 1/1 [00:03<00:00,  3.09s/it]100%|##########| 1/1 [00:03<00:00,  3.09s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:52  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:55  root                      INFO     yield speech len 0.76, rtf 3.0866808012912146
+100%|##########| 1/1 [00:03<00:00,  3.08s/it]100%|##########| 1/1 [00:03<00:00,  3.08s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:56  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:03:58  root                      INFO     yield speech len 0.8, rtf 3.1359758973121643
+100%|##########| 1/1 [00:03<00:00,  3.37s/it]100%|##########| 1/1 [00:03<00:00,  3.37s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:03:59  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:04:01  root                      INFO     yield speech len 0.76, rtf 3.0713034303564775
+100%|##########| 1/1 [00:03<00:00,  3.13s/it]100%|##########| 1/1 [00:03<00:00,  3.13s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:04:02  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:04:04  root                      INFO     yield speech len 0.68, rtf 3.214891517863554
+100%|##########| 1/1 [00:03<00:00,  3.11s/it]100%|##########| 1/1 [00:03<00:00,  3.11s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:04:05  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:04:08  root                      INFO     yield speech len 0.8, rtf 2.969658374786377
+100%|##########| 1/1 [00:03<00:00,  3.31s/it]100%|##########| 1/1 [00:03<00:00,  3.31s/it]
+  0%|          | 0/1 [00:00<?, ?it/s]05:04:09  root                      INFO     synthesis text You are a helpful assistant.<|endofprompt|>Роджер.
+05:04:11  root                      INFO     yield speech len 0.76, rtf 3.0440926551818848
+100%|##########| 1/1 [00:03<00:00,  3.04s/it]100%|##########| 1/1 [00:03<00:00,  3.04s/it]
+05:04:11  core.synthesizer          INFO     CosyVoice3 unloaded, VRAM freed
+05:04:14  core.assembler            INFO     Mixed with background track: output\tmpitr84thj\separated_000\background.wav
+05:04:14  core.assembler            INFO     Assembled 306.9 s \u2192 output\tmpxp3ot_5a\Ready or Not - SWAT Template Voice Lines - Yossarian the Assyrian (128k)_ru.wav
+05:04:17  asyncio                   ERROR    Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
 handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
 Traceback (most recent call last):
   File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run

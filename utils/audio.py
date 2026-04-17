@@ -55,9 +55,9 @@ def extract_reference_audio(
 
 
 def merge_references(ref_paths: list[str | Path], output_path: str | Path, max_total_sec: float = 60) -> Path:
-    """Pick the single best (longest) reference clip for XTTS voice cloning.
+    """Pick the single best (longest) reference clip for voice cloning.
 
-    XTTS produces best results with ONE clean 6-15 second reference.
+    CosyVoice produces best results with ONE clean 6-30 second reference.
     Concatenating multiple clips degrades speaker embedding quality.
     We select the longest clip (best speaker representation).
     """
@@ -82,7 +82,7 @@ def merge_references(ref_paths: list[str | Path], output_path: str | Path, max_t
     clip = AudioSegment.from_file(str(best_path))
     clip = clip.set_frame_rate(22050).set_channels(1).normalize()
 
-    # Trim to 6-24 seconds (XTTS sweet spot)
+    # Trim to 6-30 seconds (CosyVoice sweet spot)
     max_ms = 24000
     if len(clip) > max_ms:
         clip = clip[:max_ms]
