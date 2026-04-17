@@ -1,0 +1,39 @@
+21:57:50  ruvoicer                  INFO     Pre-loading Whisper model (before Gradio starts)...
+21:57:50  core.transcriber          INFO     Loading Whisper model: large-v3-turbo
+21:57:53  core.transcriber          INFO     Whisper model loaded
+21:57:53  ruvoicer                  INFO     Whisper ready.
+21:57:56  httpx                     INFO     HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+21:57:56  httpx                     INFO     HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+21:57:57  httpx                     INFO     HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+21:58:10  core.transcriber          INFO     Transcribing: output\tmpqc3ywp0i\input.wav
+21:58:10  faster_whisper            INFO     Processing audio with duration 00:02.261
+21:58:10  faster_whisper            INFO     VAD filter removed 00:00.000 of audio
+21:58:10  core.transcriber          INFO     Transcribed 1 segments  |  detected lang: en (100%)
+21:58:21  core.synthesizer          INFO     Loading TTS model: tts_models/multilingual/multi-dataset/xtts_v2
+D:\Projects\RuVoiCer\venv\Lib\site-packages\TTS\tts\layers\xtts\xtts_manager.py:5: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.speakers = torch.load(speaker_file_path)
+D:\Projects\RuVoiCer\venv\Lib\site-packages\TTS\utils\io.py:54: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(f, map_location=map_location, **kwargs)
+21:58:49  core.synthesizer          INFO     TTS model loaded
+21:59:03  core.synthesizer          INFO     TTS model unloaded, VRAM freed
+21:59:03  core.assembler            INFO     Assembled 5.0 s \u2192 output\tmpqc3ywp0i\result.wav
+21:59:03  asyncio                   ERROR    Exception in callback _ProactorBasePipeTransport._call_connection_lost(None)
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost(None)>
+Traceback (most recent call last):
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\events.py", line 84, in _run
+    self._context.run(self._callback, *self._args)
+  File "C:\Users\Shakur\AppData\Local\Programs\Python\Python311\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+ConnectionResetError: [WinError 10054] Удаленный хост принудительно разорвал существующее подключение
+22:00:44  core.transcriber          INFO     Transcribing: output\tmph85oly2t\input.wav
+22:00:44  faster_whisper            INFO     Processing audio with duration 00:01.155
+22:00:44  faster_whisper            INFO     VAD filter removed 00:00.000 of audio
+22:00:45  core.transcriber          INFO     Transcribed 1 segments  |  detected lang: en (100%)
+22:00:50  core.synthesizer          INFO     Loading TTS model: tts_models/multilingual/multi-dataset/xtts_v2
+D:\Projects\RuVoiCer\venv\Lib\site-packages\TTS\tts\layers\xtts\xtts_manager.py:5: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  self.speakers = torch.load(speaker_file_path)
+D:\Projects\RuVoiCer\venv\Lib\site-packages\TTS\utils\io.py:54: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  return torch.load(f, map_location=map_location, **kwargs)
+22:01:11  core.synthesizer          INFO     TTS model loaded
+22:01:15  core.synthesizer          INFO     TTS model unloaded, VRAM freed
+22:01:15  core.assembler            INFO     Assembled 3.1 s \u2192 output\tmph85oly2t\result.wav

@@ -1,0 +1,8 @@
+Collecting numpy
+  Using cached numpy-2.4.4-cp311-cp311-win_amd64.whl.metadata (6.6 kB)
+Collecting Cython
+  Using cached cython-3.2.4-cp311-cp311-win_amd64.whl.metadata (7.7 kB)
+Using cached numpy-2.4.4-cp311-cp311-win_amd64.whl (12.6 MB)
+Using cached cython-3.2.4-cp311-cp311-win_amd64.whl (2.8 MB)
+Installing collected packages: numpy, Cython
+Successfully installed Cython-3.2.4 numpy-2.4.4
